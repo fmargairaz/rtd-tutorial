@@ -18,9 +18,18 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :caption: User Guide
    
    installation
    usage
-   api
+   tutorial
+   
+.. toctree::
+   :maxdepth: 3
+   :caption: Technical Guide
+   
+   tech/QES-Winds
+   tech/QES-Turb
+   tech/QES-Plume
 
 Lumache has its documentation hosted on Read the Docs. :math:`\vec{u}`
