@@ -23,4 +23,4 @@ Contents
    usage
    api
 
-Lumache has its documentation hosted on Read the Docs. $\vec{u}$
+Lumache has its documentation hosted on Read the Docs. :math:`\vec{u}`
