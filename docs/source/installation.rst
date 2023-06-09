@@ -1,6 +1,8 @@
 Installation
-------------
+============
 
-# Linux
+Linux
+-----
 
-# MacOS
+MacOS
+-----
