@@ -1,15 +1,8 @@
 Welcome to QES's documentation!
 ===================================
 
-
-<div align="center">
-
-<!-- Badges -->
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7098280.svg)](https://doi.org/10.5281/zenodo.7098280)
-<!-- Badges -->
-
-</div>
 
 The Quick Environmental Simulation (***QES***) code is a low-computational-cost
 framework designed to compute high-resolution wind and concentration fields in
