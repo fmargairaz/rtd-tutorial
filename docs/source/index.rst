@@ -18,17 +18,22 @@ NVIDIA GPU with Compute Capability of 7.0 (or higher)***.
 
    This project is under active development.
 
-
+User Guide
+----------
 .. toctree::
    :maxdepth: 2
+   :hidden:
    :caption: User Guide
 
    installation
    usage
    tutorial
 
+Technical Guide
+---------------
 .. toctree::
    :maxdepth: 3
+   :hidden:
    :caption: Technical Guide
 
    tech/QES-Winds
