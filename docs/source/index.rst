@@ -2,7 +2,7 @@ Welcome to QES's documentation!
 ===================================
 
 .. image:: https://img.shields.io/badge/License-GPLv3-blue.svg?style=svg 
-   :tagret: https://www.gnu.org/licenses/gpl-3.0
+   :target: https://www.gnu.org/licenses/gpl-3.0
 
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.7098279.svg?style=svg 
    :target: https://doi.org/10.5281/zenodo.7098279
