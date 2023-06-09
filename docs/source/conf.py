@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'QES'
+copyright = '2023, University of Utah'
+author = 'Fabien Margairaz'
 
 release = '0.1'
 version = '0.1.0'
