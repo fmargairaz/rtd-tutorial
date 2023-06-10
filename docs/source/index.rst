@@ -20,7 +20,6 @@ NVIDIA GPU with Compute Capability of 7.0 (or higher)***.
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: User Guide
 
    installation
@@ -29,7 +28,6 @@ NVIDIA GPU with Compute Capability of 7.0 (or higher)***.
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: Technical Guide
 
    tech/QES-Winds
