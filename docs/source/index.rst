@@ -20,7 +20,7 @@ NVIDIA GPU with Compute Capability of 7.0 (or higher)***.
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
+   :numbered:
    :caption: User Guide
 
    installation
@@ -29,11 +29,9 @@ NVIDIA GPU with Compute Capability of 7.0 (or higher)***.
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
+   :numbered:
    :caption: Technical Guide
 
    tech/QES-Winds
    tech/QES-Turb
    tech/QES-Plume
-
-Lumache has its documentation hosted on Read the Docs. :math:`\vec{u}`
