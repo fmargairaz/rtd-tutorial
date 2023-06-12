@@ -6,7 +6,4 @@ formats:
   
 python:
   install:
-    - method: pip
-      path: .
-      extra_requirements:
-        - sphinxcontrib-bibtex
+    - requirements: docs/requirements.txt
