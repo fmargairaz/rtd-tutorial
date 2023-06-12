@@ -22,6 +22,7 @@ extensions = [
 
 bibtex_bibfiles = ['refs.bib']
 bibtex_reference_style = 'label'
+bibtex_default_style = 'unsrt'
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
