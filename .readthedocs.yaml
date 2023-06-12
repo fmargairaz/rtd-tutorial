@@ -7,4 +7,6 @@ formats:
 python:
   install:
     - method: pip
-      path: sphinxcontrib-bibtex
+      path: .
+      extra_requirements:
+        - sphinxcontrib-bibtex
