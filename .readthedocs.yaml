@@ -3,3 +3,8 @@ version: 2
 # Build PDF & ePub
 formats:
   - pdf
+  
+  python:
+  install:
+    - method: pip
+      path: sphinxcontrib-bibtex
