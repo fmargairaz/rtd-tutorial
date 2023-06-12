@@ -18,6 +18,9 @@ NVIDIA GPU with Compute Capability of 7.0 (or higher)***.
 
    This project is under active development.
 
+
+See :cite:t:`Margairaz.2022` for an introduction to non-standard analysis.
+
 .. toctree::
    :maxdepth: 2
    :caption: User Guide
