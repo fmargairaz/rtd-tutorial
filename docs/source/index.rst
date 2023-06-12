@@ -21,6 +21,8 @@ NVIDIA GPU with Compute Capability of 7.0 (or higher)***.
 
 See :cite:t:`Margairaz.2022` for an introduction to non-standard analysis.
 
+.. bibliography::
+
 .. toctree::
    :maxdepth: 2
    :caption: User Guide
