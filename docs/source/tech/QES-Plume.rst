@@ -1,2 +1,210 @@
-QES-Plume
-=========
+Plume Dispersion model
+======================
+
+The model
+---------
+
+The XML file
+------------
+
+Simulation Parameters
+~~~~~~~~~~~~~~~~~~~~~
+
+The parameters below are the parameters used to run the Plume model.
+
+.. code:: xml
+
+   <simulationParameters>
+       <simDur> 1000.0 </simDur>   <!-- Total simulation time -->
+       <timeStep> 0.1 </timeStep>  <!-- time step -->
+       <CourantNumber> 0.5 </CourantNumber>
+       <invarianceTol> 1e-10 </invarianceTol>
+       <C_0> 4.0 </C_0>
+       <updateFrequency_particleLoop> 10000 </updateFrequency_particleLoop>
+       <updateFrequency_timeLoop> 100 </updateFrequency_timeLoop>
+   </simulationParameters>
+
+Collection Parameters
+~~~~~~~~~~~~~~~~~~~~~
+
+The parameters below are the parameters used to calculate the
+concentration of particle (in #particles/m\ :math:`^{3}`). All
+parameters are in SI units by default (second and meters). The size of
+collection area should be set smaller or equal to the domain.
+
+.. code:: xml
+
+   <collectionParameters>
+       <timeAvgStart> 0.0 </timeAvgStart>  <!-- time to start calc of concentration -->
+       <timeAvgFreq> 60.0 </timeAvgFreq>   <!-- averaging period -->
+       <boxBoundsX1> 0.0 </boxBoundsX1>    <!-- beginning of collection area -->
+       <boxBoundsX2> 200.0 </boxBoundsX2>  <!-- end of collection area -->
+       <boxBoundsY1> 0.0 </boxBoundsY1>
+       <boxBoundsY2> 200.0 </boxBoundsY2>
+       <boxBoundsZ1> 0.0 </boxBoundsZ1>
+       <boxBoundsZ2> 200.0 </boxBoundsZ2>
+       <nBoxesX> 200 </nBoxesX>            <!-- resolution of concentration -->
+       <nBoxesY> 200 </nBoxesY>
+       <nBoxesZ> 200 </nBoxesZ>
+   </collectionParameters>
+
+Sources
+~~~~~~~
+
+.. code:: xml
+
+   <sources>
+       <numSources> 1 </numSources> <!-- Number of active sources -->
+       <!-- HERE COME THE SOURCES -->
+   </sources>
+
+Source types
+^^^^^^^^^^^^
+
+.. code:: xml
+
+   <SourcePoint>
+       <!-- HERE COMES THE RELEASE TYPE -->
+       <posX> 40.0 </posX>
+       <posY> 80.0 </posY>
+       <posZ> 30.0 </posZ>
+   </SourcePoint>
+
+.. code:: xml
+
+   <SourceLine>
+       <!-- HERE COMES THE RELEASE TYPE -->
+       <posX_0> 25.0 </posX_0>
+       <posY_0> 175.0 </posY_0>
+       <posZ_0> 40.0 </posZ_0>
+       <posX_1> 50.0 </posX_1>
+       <posY_1> 25.0 </posY_1>
+       <posZ_1> 40.0 </posZ_1>
+   </SourceLine>
+
+.. code:: xml
+
+   <SourceCube>
+       <!-- HERE COMES THE RELEASE TYPE -->
+       <minX> 75.0 </minX>
+       <minY> 25.0 </minY>
+       <minZ> 70.0 </minZ>
+       <maxX> 80.0 </maxX>
+       <maxY> 35.0 </maxY>
+       <maxZ> 80.0 </maxZ>
+   </SourceCube>
+
+.. code:: xml
+
+   <SourceCircle>
+       <!-- HERE COMES THE RELEASE TYPE -->
+       <posX> 40.0 </posX>
+       <posY> 80.0 </posY>
+       <posZ> 30.0 </posZ>
+       <radius> 30.0 </radius>
+   </SourceCircle>
+
+.. code:: xml
+
+   <SourceFullDomain>
+       <!-- HERE COMES THE RELEASE TYPE -->
+   </SourceFullDomain>
+
+Release types
+^^^^^^^^^^^^^
+
+.. code:: xml
+
+   <ReleaseType_continuous>
+       <parPerTimestep>10</parPerTimestep>
+   </ReleaseType_continuous>
+
+.. code:: xml
+
+   <ReleaseType_duration>
+       <releaseEndTime>0</releaseEndTime>
+       <releaseEndTime>5</releaseEndTime>
+       <parPerTimestep>10</parPerTimestep>
+   </ReleaseType_duration>
+
+.. code:: xml
+
+   <ReleaseType_instantaneous>
+       <numPar>100000</numPar>
+   </ReleaseType_instantaneous>
+
+Boundary Conditions
+~~~~~~~~~~~~~~~~~~~
+
+.. code:: xml
+
+   <boundaryConditions>
+       <xBCtype>exiting</xBCtype>
+       <yBCtype>exiting</yBCtype>
+       <zBCtype>exiting</zBCtype>
+       <wallReflection>stairstepReflection</wallReflection>
+   </boundaryConditions>
+
+Here are the option of the boundary conditions types:
+
+-  ``exiting`` particle exit the domain
+
+-  ``periodic`` particle reenter the domain at the other side
+
+-  ``reflection`` particle is reflected from the domain boundary (works
+   only of domain ends)
+
+Here are the option of the wall reflections methods
+
+-  ``doNothing`` nothing happen when particle enter wall
+
+-  ``setInactive`` (default) particle is set to inactive when entering a
+   wall
+
+-  ``stairstepReflection`` particle use full stair step reflection when
+   entering a wall
+
+Full XML Example
+~~~~~~~~~~~~~~~~
+
+.. code:: xml
+
+   <simulationParameters>
+       <simDur> 1000.0 </simDur>
+       <timeStep> 0.1 </timeStep>
+       <CourantNumber> 1 </CourantNumber>
+       <invarianceTol> 1e-10 </invarianceTol>
+       <C_0> 4.0 </C_0>
+       <updateFrequency_particleLoop> 10000 </updateFrequency_particleLoop>
+       <updateFrequency_timeLoop> 100 </updateFrequency_timeLoop>
+   </simulationParameters>
+   <collectionParameters>
+       <timeAvgStart> 0.0 </timeAvgStart>
+       <timeAvgFreq> 60.0 </timeAvgFreq>
+       <boxBoundsX1> 0.0 </boxBoundsX1>
+       <boxBoundsX2> 200.0 </boxBoundsX2>
+       <boxBoundsY1> 0.0 </boxBoundsY1>
+       <boxBoundsY2> 200.0 </boxBoundsY2>
+       <boxBoundsZ1> 0.0 </boxBoundsZ1>
+       <boxBoundsZ2> 200.0 </boxBoundsZ2>
+       <nBoxesX> 200 </nBoxesX>
+       <nBoxesY> 200 </nBoxesY>
+       <nBoxesZ> 200 </nBoxesZ>
+   </collectionParameters>
+   <sources>
+       <numSources> 1 </numSources>
+       <SourcePoint>
+           <ReleaseType_continuous>
+               <parPerTimestep>10</parPerTimestep>
+           </ReleaseType_continuous>
+           <posX> 10.0 </posX>
+           <posY> 100.0 </posY>
+           <posZ> 50.0 </posZ>
+       </SourcePoint>
+   </sources>
+   <boundaryConditions>
+       <xBCtype>exiting</xBCtype>
+       <yBCtype>exiting</yBCtype>
+       <zBCtype>exiting</zBCtype>
+       <wallReflection>stairstepReflection</wallReflection>
+   </boundaryConditions>
