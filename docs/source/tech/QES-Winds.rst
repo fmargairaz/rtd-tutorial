@@ -75,7 +75,7 @@ layer above the bottom surface to create a zero gradient for the
 Lagrange multipliers (boundary condition) as well as providing the
 neighboring cell for the finite difference method.
 
-.. figure:: {Images/staggered_grid_full.png}
+.. figure:: Images/staggered_grid_full.png
    :alt:
 
 Halo Region
