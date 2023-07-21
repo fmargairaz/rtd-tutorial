@@ -1,10 +1,10 @@
 Welcome to QES's documentation!
 ===================================
 
-.. image:: https://img.shields.io/badge/License-GPLv3-blue.svg?style=svg 
+.. image:: https://img.shields.io/badge/License-GPLv3-blue.svg?style=svg
    :target: https://www.gnu.org/licenses/gpl-3.0
 
-.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.7098279.svg?style=svg 
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.7098279.svg?style=svg
    :target: https://doi.org/10.5281/zenodo.7098279
 
 The Quick Environmental Simulation (***QES***) code is a low-computational-cost
@@ -21,8 +21,6 @@ NVIDIA GPU with Compute Capability of 7.0 (or higher)***.
 
 See :cite:t:`Margairaz.2022` for an introduction to non-standard analysis.
 
-.. bibliography::
-
 .. toctree::
    :maxdepth: 2
    :caption: User Guide
@@ -38,3 +36,5 @@ See :cite:t:`Margairaz.2022` for an introduction to non-standard analysis.
    tech/QES-Winds
    tech/QES-Turb
    tech/QES-Plume
+
+.. bibliography::
