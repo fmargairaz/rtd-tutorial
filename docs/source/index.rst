@@ -36,5 +36,4 @@ See :cite:t:`Margairaz.2022` for an introduction to non-standard analysis.
    tech/QES-Winds
    tech/QES-Turb
    tech/QES-Plume
-
-.. bibliography::
+   tech/References

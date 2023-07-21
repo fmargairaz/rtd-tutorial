@@ -22,7 +22,7 @@ accelerate wind simulations. Figure `1 <#fig:Winds>`__ shows a
 high-level flowchart for QES-Winds code.
 
 .. figure:: Images/QES_flowchart.png
-   :alt: 
+   :alt:
    :width: 17cm
 
 QES-Winds Domain
@@ -48,7 +48,7 @@ of :math:`2\ \si{\metre}` by :math:`2\ \si{\metre}` by
    <simulationParameters>
        <domain> 1000 1000 100 </domain>                    <!-- Number of cells in x,y and z directions-->
        <cellSize> 2.0 2.0 2.0 </cellSize>              <!-- Mesh resolution (meters)-->
-   </simulationParameters>    
+   </simulationParameters>
 
 Staggered Grid
 ~~~~~~~~~~~~~~
@@ -72,7 +72,7 @@ Lagrange multipliers (boundary condition) as well as providing the
 neighboring cell for the finite difference method.
 
 .. figure:: Images/staggered_grid_full.png
-   :alt: 
+   :alt:
 
 Halo Region
 ^^^^^^^^^^^
@@ -86,7 +86,7 @@ the halo region is added to the domain around a Digital Elevation Model
 (DEM) or a shapefile.
 
 .. figure:: Images/domain_halo.png
-   :alt: 
+   :alt:
    :width: 11cm
 
 In order to define length of the halo zone in :math:`x` and :math:`y`
@@ -101,7 +101,7 @@ length of the halo in :math:`x` and :math:`y` directions, respectively.
    <simulationParameters>
        <halo_x> 20.0 </halo_x>                     <!-- Halo region added to x-direction of domain (at the beginning and the end of domain) (meters)-->
        <halo_y> 30.0 </halo_y>                     <!-- Halo region added to y-direction of domain (at the beginning and the end of domain) (meters)-->
-   </simulationParameters>    
+   </simulationParameters>
 
 Digital Elevation Model (DEM) and ESRI Shapefile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,11 +141,11 @@ while value :math:`2` (red) indicates the terrain cells.
    :name: fig:askervein
 
    .. figure:: Images/askervein_y_3000_icell.png
-      :alt: 
+      :alt:
       :width: 13cm
 
    .. figure:: Images/askervein_z_20_icell.png
-      :alt: 
+      :alt:
       :width: 13cm
 
 The user can define the address to the DEM using <DEM> variable under
@@ -154,8 +154,8 @@ the <simulationParameters> part in the XML file:
 .. code:: xml
 
    <simulationParameters>
-       <DEM>../scratch/DEM/askervein.tif</DEM>             <!-- Address to DEM location--> 
-   </simulationParameters>    
+       <DEM>../scratch/DEM/askervein.tif</DEM>             <!-- Address to DEM location-->
+   </simulationParameters>
 
 Process Part of DEM
 '''''''''''''''''''
@@ -167,7 +167,7 @@ domain inside the DEM borders and the size of the QES domain. Figure
 defined inside a DEM file and only process that part.
 
 .. figure:: Images/DEM_cut.png
-   :alt: 
+   :alt:
    :width: 13cm
 
 There are two options to determine the location of the origin of QES
@@ -182,8 +182,8 @@ distances (in meters) in :math:`x` and :math:`y` directions using
    <simulationParameters>
        <originFlag> 0 </originFlag>                    <!-- Origin flag (0- DEM coordinates (default), 1- UTM coordinates) -->
          <DEMDistancex> 1000.0 </DEMDistancex>                 <!-- x component (m) of origin in DEM coordinates (if originFlag = 0) -->
-         <DEMDistancey> 1000.0 </DEMDistancey>                 <!-- y component (m) of origin in DEM coordinates (if originFlag = 0) -->   
-   </simulationParameters>    
+         <DEMDistancey> 1000.0 </DEMDistancey>                 <!-- y component (m) of origin in DEM coordinates (if originFlag = 0) -->
+   </simulationParameters>
 
 ) Defining the location of the QES domain origin in the Universal
 Transverse Mercator (UTM) coordinates by setting the value of
@@ -196,7 +196,7 @@ origin in :math:`x` and :math:`y` directions, respectively.
        <originFlag> 1 </originFlag>                    <!-- Origin flag (0- DEM coordinates (default), 1- UTM coordinates) -->
          <UTMx> 595469.6122881 </UTMx>                     <!-- x component (m) of origin in UTM DEM coordinates (if originFlag = 1)-->
          <UTMy> 6336281.9538635 </UTMy>                    <!-- y component (m) of origin in UTM DEM coordinates (if originFlag = 1)-->
-   </simulationParameters>    
+   </simulationParameters>
 
 Automated City Building
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -218,11 +218,11 @@ shapefiles. The cell type value :math:`0` (blue) represents the building
 cells while value :math:`1` (red) indicates the air cells.
 
 .. figure:: Images/OKC.png
-   :alt: 
+   :alt:
    :width: 13cm
 
 .. figure:: Images/oklahoma_z_3_icell.png
-   :alt: 
+   :alt:
 
 The user can define the address to the shapefile using <SHP> variable as
 well as the name of the shapefile using the <SHPBuildingLayer> and the
@@ -236,7 +236,7 @@ actual height of the buildings using the <heightFactor> under
        <SHP>../data/GISFiles/OKCSmallDomain/OKCSmallDomainJU2003.shp</SHP> <!-- Address to shapefile location-->
        <SHPBuildingLayer>OKCSmallDomainJU2003</SHPBuildingLayer>
        <heightFactor> 1.0 </heightFactor>              <!-- Height factor multiplied by the building height read in from the shapefile (default = 1.0)-->
-   </simulationParameters>    
+   </simulationParameters>
 
 .. _`sec:building`:
 
@@ -270,7 +270,7 @@ the surface roughness for all the building walls.
            <width> 20.0 </width>
            <buildingRotation> 0.0 </buildingRotation>
        </rectangularBuilding>
-   </buildings>   
+   </buildings>
 
 Initial Wind Field
 ~~~~~~~~~~~~~~~~~~
@@ -343,7 +343,7 @@ define the address to the location of the sensor file using the
    <metParams>
        <z0_domain_flag> 0 </z0_domain_flag>                    <!-- Distribution of surface roughness for domain (0-uniform (default), 1-custom -->
        <sensorName>../data/InputFiles/sensor.xml</sensorName>  <!-- Name of the sensor file with information for the sensor included -->
-   </metParams>    
+   </metParams>
 
 ) The user can define all information required for creating a sensor by
 using the <sensor> variable inside the <metParams> section of the XML
@@ -361,7 +361,7 @@ local coordinates of the QES domain.
          <site_xcoord> 1.0  </site_xcoord>                 <!-- x component of site location in QES domain (m) (if site_coord_flag = 1) -->
          <site_ycoord> 1.0 </site_ycoord>              <!-- y component of site location in QES domain (m) (if site_coord_flag = 1)-->
        </sensor>
-   </metParams>    
+   </metParams>
 
 ) The user can define the location in the Universal Transverse Mercator
 (UTM) coordinates. In this case, user also needs to define the origin of
@@ -373,7 +373,7 @@ computational domain in the UTM coordinates.
      <UTMx> 634173 </UTMx>                         <!-- x component (m) of origin in UTM -->
        <UTMy> 3925360 </UTMy>                      <!-- y component (m) of origin in UTM -->
        <UTMZone> 14 </UTMZone>                         <!-- UTM zone that domain located -->
-   </simulationParameters>    
+   </simulationParameters>
 
 .. code:: xml
 
@@ -384,7 +384,7 @@ computational domain in the UTM coordinates.
          <site_UTM_y> 3925362 </site_UTM_y>                <!-- y components of site coordinate in UTM (if site_coord_flag = 2)-->
          <site_UTM_zone> 14 </site_UTM_zone>               <!-- UTM zone of the sensor site (if site_coord_flag = 2)-->
        </sensor>
-   </metParams>    
+   </metParams>
 
 ) The user can define the location in Latitude and Longitude
 coordinates. In this case, user also needs to define the origin of
@@ -396,7 +396,7 @@ computational domain in the UTM coordinates.
      <UTMx> 634173 </UTMx>                         <!-- x component (m) of origin in UTM -->
        <UTMy> 3925360 </UTMy>                      <!-- y component (m) of origin in UTM -->
        <UTMZone> 14 </UTMZone>                         <!-- UTM zone that domain located -->
-   </simulationParameters>    
+   </simulationParameters>
 
 .. code:: xml
 
@@ -406,7 +406,7 @@ computational domain in the UTM coordinates.
          <site_lat> 35.46270 </site_lat>               <!-- x components of site coordinate in Latitude (if site_coord_flag = 3) -->
          <site_lat> -97.52130 </site_lat>              <!-- y components of site coordinate in Longitude (if site_coord_flag = 3)-->
        </sensor>
-   </metParams>    
+   </metParams>
 
 The second part of sensor definition is choosing type of profile for
 different time steps, if applicable. The <timeSeries> variable is
@@ -428,14 +428,14 @@ QES-Winds: 1) Logarithmic velocity profile, based on Eq.
                <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
             </timeSeries>
        </sensor>
-   </metParams>    
+   </metParams>
 
 Figure `8 <#fig:log_profile>`__ shows velocity magnitude contour with
 overlaying velocity vectors of initial velocity field created by the
 aforementioned example of the logarithmic profile.
 
 .. figure:: Images/log_y_101.png
-   :alt: 
+   :alt:
 
 ) Exponential (power law) velocity profile, based on Eq.
 `[eq:power_law] <#eq:power_law>`__:
@@ -453,14 +453,14 @@ aforementioned example of the logarithmic profile.
                <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
             </timeSeries>
        </sensor>
-   </metParams>    
+   </metParams>
 
 Figure `9 <#fig:exp>`__ shows velocity magnitude contour with overlaying
 velocity vectors of the initial velocity field created by the
 aforementioned example of the exponential (power law) profile.
 
 .. figure:: Images/exp_y_101.png
-   :alt: 
+   :alt:
 
 ) Urban canopy velocity profile, based on Eq.
 `[eq:urban_canopy_low] <#eq:urban_canopy_low>`__ and
@@ -481,14 +481,14 @@ aforementioned example of the exponential (power law) profile.
                  <attenuationCoefficient> 1.0 </attenuationCoefficient>
             </timeSeries>
        </sensor>
-   </metParams>    
+   </metParams>
 
 Figure `10 <#fig:canopy>`__ shows velocity magnitude contour with
 overlaying velocity vectors of the initial velocity field created by the
 aforementioned example of the urban canopy profile.
 
 .. figure:: Images/canopy_y_101.png
-   :alt: 
+   :alt:
 
 ) Data entry of the profile from an experimental tower with multiple
 sensors or from a numerical mesoscale weather prediction model like WRF
@@ -503,10 +503,10 @@ sensors or from a numerical mesoscale weather prediction model like WRF
              <siteZ0> 0.1 </siteZ0>                                    <!-- Site z0 -->
              <reciprocal> 0.0 </reciprocal>                        <!-- Reciprocal Monin-Obukhov Length (1/m) -->
              <height> 30.7015 </height>                            <!-- Height of the sensor -->
-             <height> 74.4169 </height> 
-             <height> 144.644 </height> 
-             <height> 197.455 </height> 
-             <height> 268.468 </height> 
+             <height> 74.4169 </height>
+             <height> 144.644 </height>
+             <height> 197.455 </height>
+             <height> 268.468 </height>
              <speed> 2.56922 </speed>                          <!-- Measured speed at the sensor height -->
              <speed> 2.55532 </speed>
              <speed> 2.33319 </speed>
@@ -519,7 +519,7 @@ sensors or from a numerical mesoscale weather prediction model like WRF
              <direction> 344.273 </direction>
            </timeSeries>
        </sensor>
-   </metParams>    
+   </metParams>
 
 Empirical Parameterizations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -583,30 +583,30 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    :name: fig:upwind_1_vert
 
    .. figure:: Images/upwind_y_100_1_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/upwind_y_100_1_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/upwind_y_100_1_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 .. container:: float
    :name: fig:upwind_1_horiz
 
    .. figure:: Images/upwind_z_5_1_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/upwind_z_5_1_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/upwind_z_5_1_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 The second option is called the Modified Vortex Parameterization (MVP)
@@ -646,30 +646,30 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    :name: fig:upwind_2_vert
 
    .. figure:: Images/upwind_y_100_2_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/upwind_y_100_2_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/upwind_y_100_2_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 .. container:: float
    :name: fig:upwind_2_horiz
 
    .. figure:: Images/upwind_z_5_2_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/upwind_z_5_2_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/upwind_z_5_2_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 The third option is called the high-rise MVP algorithm (HMVP) and is
@@ -702,30 +702,30 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    :name: fig:upwind_3_vert
 
    .. figure:: Images/upwind_y_100_3_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/upwind_y_100_3_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/upwind_y_100_3_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 .. container:: float
    :name: fig:upwind_3_horiz
 
    .. figure:: Images/upwind_z_5_3_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/upwind_z_5_3_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/upwind_z_5_3_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 In order to choose between these three upwind models, the user needs to
@@ -735,7 +735,7 @@ change the value of "upwindCavityFlag" in the XML file.
 
    <simulationParameters>
        <upwindCavityFlag> 2 </upwindCavityFlag>            <!-- Upwind cavity flag (0-none, 1-Rockle, 2-MVP (default), 3-HMVP) -->
-   </simulationParameters>    
+   </simulationParameters>
 
 Leeside Cavity and Far-Wake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -802,30 +802,30 @@ velocity magnitude contour with overlaying velocity vectors of initial
    :name: fig:wake_vert
 
    .. figure:: Images/wake_y_100_1_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/wake_y_100_1_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/wake_y_100_1_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 .. container:: float
    :name: fig:wake_horiz
 
    .. figure:: Images/wake_z_5_1_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/wake_z_5_1_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/wake_z_5_1_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 In order to turn on the wake model, the user needs to change the value
@@ -835,7 +835,7 @@ of "wakeFlag" in the XML file.
 
    <simulationParameters>
        <wakeFlag> 1 </wakeFlag>                <!-- Wake flag (0-none, 1-Rockle (default)) -->
-   </simulationParameters>    
+   </simulationParameters>
 
 Street Canyon
 ^^^^^^^^^^^^^
@@ -852,7 +852,7 @@ vertical component as in Eq. `[eq:w_can] <#eq:w_can>`__.
    \frac{u(x, y, z)}{U(H)}=-\frac{x_{\mathrm{can}}}{(0.5 S)}\left(\frac{S-x_{\mathrm{can}}}{0.5 S}\right)
    \label{eq:u_can}
 
-| 
+|
 
   .. math::
 
@@ -894,30 +894,30 @@ horizontal plane at :math:`z=5\ \si{\meter}`, respectively.
    :name: fig:street_vert
 
    .. figure:: Images/street_y_100_1_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/street_y_100_1_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/street_y_100_1_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 .. container:: float
    :name: fig:street_horiz
 
    .. figure:: Images/street_z_5_1_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/street_z_5_1_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/street_z_5_1_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 To turn on the street canyon parameterization, the user needs to change
@@ -927,7 +927,7 @@ the value of "streetCanyonFlag" in the XML file.
 
    <simulationParameters>
        <streetCanyonFlag> 1 </streetCanyonFlag>            <!-- Street canyon flag (0-none, 1-Roeckle w/ Fackrel (default)) -->
-   </simulationParameters>    
+   </simulationParameters>
 
 Rooftop Recirculation
 ^^^^^^^^^^^^^^^^^^^^^
@@ -952,7 +952,7 @@ length as the vortex and half of the height.
    L_{\mathrm{c}}=0.9 R
    \label{eq:Lc}
 
-| 
+|
 
   .. math::
 
@@ -982,15 +982,15 @@ velocity fields in a vertical plane at :math:`y=100\ \si{\meter}`.
    :name: fig:rooftop_vert
 
    .. figure:: Images/rooftop_y_100_1_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/rooftop_y_100_1_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/rooftop_y_100_1_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 To turn the parameterization on, the user needs to change the value of
@@ -1000,7 +1000,7 @@ To turn the parameterization on, the user needs to change the value of
 
    <simulationParameters>
        <rooftopFlag> 1 </rooftopFlag>                  <!-- Rooftop flag (0-none, 1-log profile (default)) -->
-   </simulationParameters>    
+   </simulationParameters>
 
 Sidewall Recirculation Zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1016,7 +1016,7 @@ vortex strength and geometry are:
 
 .. math:: L_{\mathrm{c}}=0.9 R
 
-| 
+|
 
   .. math:: W_{\mathrm{c}}=0.22 R
 | where :math:`B_s` is the smaller of the height (:math:`H`) and the
@@ -1044,15 +1044,15 @@ velocity fields in a horizontal plane at :math:`z=5\ \si{\meter}`.
    :name: fig:sidewall_horiz
 
    .. figure:: Images/sidewall_z_5_1_init_icell.png
-      :alt: 
+      :alt:
       :width: 10.3cm
 
    .. figure:: Images/sidewall_z_5_1_init_vel.png
-      :alt: 
+      :alt:
       :width: 11cm
 
    .. figure:: Images/sidewall_z_5_1_final.png
-      :alt: 
+      :alt:
       :width: 11cm
 
 In order to turn the algorithm on, the user needs to change the value of
@@ -1062,7 +1062,7 @@ In order to turn the algorithm on, the user needs to change the value of
 
    <simulationParameters>
        <sidewallFlag> 1 </sidewallFlag>                <!-- Sidewall flag (0-off, 1-on (default)) -->
-   </simulationParameters>    
+   </simulationParameters>
 
 Mass Consistent Solver
 ~~~~~~~~~~~~~~~~~~~~~~
