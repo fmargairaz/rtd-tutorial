@@ -7,8 +7,8 @@ Introduction
 A new dispersion modeling system based on the well-used FORTRAN-based
 QUIC (Quick Urban and Industrial Complex) dispersion modeling system
 originally developed by the University of Utah and Los Alamos National
-Laboratory :cite:t:`brown2013quic`, has been under development
-as collaboration between the University of Utah and the University of
+Laboratory :cite:t:`brown2013quic`, has been under development as
+collaboration between the University of Utah and the University of
 Minnesota, Duluth. Quick Environmental Simulation (QES) is a
 microclimate simulation platform for computing 3D environmental scalars
 in urban areas and over complex terrain. Figure `[fig:QES] <#fig:QES>`__
@@ -22,7 +22,7 @@ accelerate wind simulations. Figure `1 <#fig:Winds>`__ shows a
 high-level flowchart for QES-Winds code.
 
 .. figure:: Images/QES_flowchart.png
-   :alt:
+   :alt: 
    :width: 17cm
 
 QES-Winds Domain
@@ -48,7 +48,7 @@ of :math:`2\ \si{\metre}` by :math:`2\ \si{\metre}` by
    <simulationParameters>
        <domain> 1000 1000 100 </domain>                    <!-- Number of cells in x,y and z directions-->
        <cellSize> 2.0 2.0 2.0 </cellSize>              <!-- Mesh resolution (meters)-->
-   </simulationParameters>
+   </simulationParameters>    
 
 Staggered Grid
 ~~~~~~~~~~~~~~
@@ -72,7 +72,7 @@ Lagrange multipliers (boundary condition) as well as providing the
 neighboring cell for the finite difference method.
 
 .. figure:: Images/staggered_grid_full.png
-   :alt:
+   :alt: 
 
 Halo Region
 ^^^^^^^^^^^
@@ -86,7 +86,7 @@ the halo region is added to the domain around a Digital Elevation Model
 (DEM) or a shapefile.
 
 .. figure:: Images/domain_halo.png
-   :alt:
+   :alt: 
    :width: 11cm
 
 In order to define length of the halo zone in :math:`x` and :math:`y`
@@ -101,7 +101,7 @@ length of the halo in :math:`x` and :math:`y` directions, respectively.
    <simulationParameters>
        <halo_x> 20.0 </halo_x>                     <!-- Halo region added to x-direction of domain (at the beginning and the end of domain) (meters)-->
        <halo_y> 30.0 </halo_y>                     <!-- Halo region added to y-direction of domain (at the beginning and the end of domain) (meters)-->
-   </simulationParameters>
+   </simulationParameters>    
 
 Digital Elevation Model (DEM) and ESRI Shapefile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,8 +125,8 @@ we have loaded and tested multiple different terrain data sets. As a
 first test, we loaded a DEM of Askervein Hill. This is an isolated hill
 in Scotland where field experiments have been conducted and data for
 testing and evaluation exists
-(:raw-latex:`\cite{taylor1987askervein,mickle1988askervein}`). The
-simulation with Askervein Hill was run without any complex terrain flow
+(:cite:t:`taylor1987askervein,mickle1988askervein`). The simulation with
+Askervein Hill was run without any complex terrain flow
 parameterizations. The Askervein Hill dataset is
 :math:`6023.43\ \si{\metre}` by :math:`6023.43\ \si{\metre}`. The hill
 height is approximately :math:`124\ \si{\metre}` tall. Figure
@@ -141,11 +141,11 @@ while value :math:`2` (red) indicates the terrain cells.
    :name: fig:askervein
 
    .. figure:: Images/askervein_y_3000_icell.png
-      :alt:
+      :alt: 
       :width: 13cm
 
    .. figure:: Images/askervein_z_20_icell.png
-      :alt:
+      :alt: 
       :width: 13cm
 
 The user can define the address to the DEM using <DEM> variable under
@@ -154,8 +154,8 @@ the <simulationParameters> part in the XML file:
 .. code:: xml
 
    <simulationParameters>
-       <DEM>../scratch/DEM/askervein.tif</DEM>             <!-- Address to DEM location-->
-   </simulationParameters>
+       <DEM>../scratch/DEM/askervein.tif</DEM>             <!-- Address to DEM location--> 
+   </simulationParameters>    
 
 Process Part of DEM
 '''''''''''''''''''
@@ -167,7 +167,7 @@ domain inside the DEM borders and the size of the QES domain. Figure
 defined inside a DEM file and only process that part.
 
 .. figure:: Images/DEM_cut.png
-   :alt:
+   :alt: 
    :width: 13cm
 
 There are two options to determine the location of the origin of QES
@@ -182,8 +182,8 @@ distances (in meters) in :math:`x` and :math:`y` directions using
    <simulationParameters>
        <originFlag> 0 </originFlag>                    <!-- Origin flag (0- DEM coordinates (default), 1- UTM coordinates) -->
          <DEMDistancex> 1000.0 </DEMDistancex>                 <!-- x component (m) of origin in DEM coordinates (if originFlag = 0) -->
-         <DEMDistancey> 1000.0 </DEMDistancey>                 <!-- y component (m) of origin in DEM coordinates (if originFlag = 0) -->
-   </simulationParameters>
+         <DEMDistancey> 1000.0 </DEMDistancey>                 <!-- y component (m) of origin in DEM coordinates (if originFlag = 0) -->   
+   </simulationParameters>    
 
 ) Defining the location of the QES domain origin in the Universal
 Transverse Mercator (UTM) coordinates by setting the value of
@@ -196,7 +196,7 @@ origin in :math:`x` and :math:`y` directions, respectively.
        <originFlag> 1 </originFlag>                    <!-- Origin flag (0- DEM coordinates (default), 1- UTM coordinates) -->
          <UTMx> 595469.6122881 </UTMx>                     <!-- x component (m) of origin in UTM DEM coordinates (if originFlag = 1)-->
          <UTMy> 6336281.9538635 </UTMy>                    <!-- y component (m) of origin in UTM DEM coordinates (if originFlag = 1)-->
-   </simulationParameters>
+   </simulationParameters>    
 
 Automated City Building
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -208,21 +208,21 @@ heights are loaded from ESRI shapefiles, QES-Winds creates polygon
 buildings and applies appropriate parameterization to them. Figure
 `6 <#fig:okc_qgis>`__ shows an example ESRI shapefile can be read into
 QES-Winds, Central Business District (CBD) of Oklahoma City shapefile,
-subject to JU2003 experimental campaign
-:raw-latex:`\cite{allwine2006joint}`, plotted using the freely available
-software QGIS (`https://qgis.orgg <https://qgis.org>`__). The cell type
-contour for the Oklahoma City test case in a horizontal plane at
+subject to JU2003 experimental campaign :cite:t:`allwine2006joint`,
+plotted using the freely available software QGIS
+(`https://qgis.orgg <https://qgis.org>`__). The cell type contour for
+the Oklahoma City test case in a horizontal plane at
 :math:`z=3\ \si{\metre}` is shown in Figure `7 <#fig:okc_icell>`__. This
 plot indicates the ability of QES-Winds to read in and process ESRI
 shapefiles. The cell type value :math:`0` (blue) represents the building
 cells while value :math:`1` (red) indicates the air cells.
 
 .. figure:: Images/OKC.png
-   :alt:
+   :alt: 
    :width: 13cm
 
 .. figure:: Images/oklahoma_z_3_icell.png
-   :alt:
+   :alt: 
 
 The user can define the address to the shapefile using <SHP> variable as
 well as the name of the shapefile using the <SHPBuildingLayer> and the
@@ -236,7 +236,7 @@ actual height of the buildings using the <heightFactor> under
        <SHP>../data/GISFiles/OKCSmallDomain/OKCSmallDomainJU2003.shp</SHP> <!-- Address to shapefile location-->
        <SHPBuildingLayer>OKCSmallDomainJU2003</SHPBuildingLayer>
        <heightFactor> 1.0 </heightFactor>              <!-- Height factor multiplied by the building height read in from the shapefile (default = 1.0)-->
-   </simulationParameters>
+   </simulationParameters>    
 
 .. _`sec:building`:
 
@@ -270,7 +270,7 @@ the surface roughness for all the building walls.
            <width> 20.0 </width>
            <buildingRotation> 0.0 </buildingRotation>
        </rectangularBuilding>
-   </buildings>
+   </buildings>   
 
 Initial Wind Field
 ~~~~~~~~~~~~~~~~~~
@@ -282,10 +282,10 @@ field. If there is only the wind velocity and direction at a single
 point, the user should specify what type of velocity profile they want
 to build from the measurement. There are three options available for the
 type of profile: 1) a logarithmic profile (Eq.
-`[eq:log_law] <#eq:log_law>`__) :raw-latex:`\cite{favaloro2008toward}`,
-2) a power law profile (Eq. `[eq:power_law] <#eq:power_law>`__)
-:raw-latex:`\cite{favaloro2008toward}` and 3) an urban canopy profile
-(Eq. `[eq:urban_canopy_low] <#eq:urban_canopy_low>`__,
+`[eq:log_law] <#eq:log_law>`__) :cite:t:`favaloro2008toward`, 2) a power
+law profile (Eq. `[eq:power_law] <#eq:power_law>`__)
+:cite:t:`favaloro2008toward` and 3) an urban canopy profile (Eq.
+`[eq:urban_canopy_low] <#eq:urban_canopy_low>`__,
 `[eq:urban_canopy_up] <#eq:urban_canopy_up>`__)
 :raw-latex:`\cite{favaloro2008toward, pardyjak2008near}`.
 
@@ -324,9 +324,9 @@ If there is only one sensor available in the computational domain, the
 code will extend the profile for that sensor uniformly to the whole
 domain. On the occasion of multiple sensors, QES-Winds utilizes a
 two-dimensional Barnes interpolation scheme
-:raw-latex:`\cite{koch1983interactive,booth2012validation}` to
-interpolate velocity components at each cell height of the domain based
-on the weighted distance from each sensor.
+:cite:t:`koch1983interactive,booth2012validation` to interpolate
+velocity components at each cell height of the domain based on the
+weighted distance from each sensor.
 
 .. _`sec:sensor_xml`:
 
@@ -343,7 +343,7 @@ define the address to the location of the sensor file using the
    <metParams>
        <z0_domain_flag> 0 </z0_domain_flag>                    <!-- Distribution of surface roughness for domain (0-uniform (default), 1-custom -->
        <sensorName>../data/InputFiles/sensor.xml</sensorName>  <!-- Name of the sensor file with information for the sensor included -->
-   </metParams>
+   </metParams>    
 
 ) The user can define all information required for creating a sensor by
 using the <sensor> variable inside the <metParams> section of the XML
@@ -361,7 +361,7 @@ local coordinates of the QES domain.
          <site_xcoord> 1.0  </site_xcoord>                 <!-- x component of site location in QES domain (m) (if site_coord_flag = 1) -->
          <site_ycoord> 1.0 </site_ycoord>              <!-- y component of site location in QES domain (m) (if site_coord_flag = 1)-->
        </sensor>
-   </metParams>
+   </metParams>    
 
 ) The user can define the location in the Universal Transverse Mercator
 (UTM) coordinates. In this case, user also needs to define the origin of
@@ -373,7 +373,7 @@ computational domain in the UTM coordinates.
      <UTMx> 634173 </UTMx>                         <!-- x component (m) of origin in UTM -->
        <UTMy> 3925360 </UTMy>                      <!-- y component (m) of origin in UTM -->
        <UTMZone> 14 </UTMZone>                         <!-- UTM zone that domain located -->
-   </simulationParameters>
+   </simulationParameters>    
 
 .. code:: xml
 
@@ -384,7 +384,7 @@ computational domain in the UTM coordinates.
          <site_UTM_y> 3925362 </site_UTM_y>                <!-- y components of site coordinate in UTM (if site_coord_flag = 2)-->
          <site_UTM_zone> 14 </site_UTM_zone>               <!-- UTM zone of the sensor site (if site_coord_flag = 2)-->
        </sensor>
-   </metParams>
+   </metParams>    
 
 ) The user can define the location in Latitude and Longitude
 coordinates. In this case, user also needs to define the origin of
@@ -396,7 +396,7 @@ computational domain in the UTM coordinates.
      <UTMx> 634173 </UTMx>                         <!-- x component (m) of origin in UTM -->
        <UTMy> 3925360 </UTMy>                      <!-- y component (m) of origin in UTM -->
        <UTMZone> 14 </UTMZone>                         <!-- UTM zone that domain located -->
-   </simulationParameters>
+   </simulationParameters>    
 
 .. code:: xml
 
@@ -406,7 +406,7 @@ computational domain in the UTM coordinates.
          <site_lat> 35.46270 </site_lat>               <!-- x components of site coordinate in Latitude (if site_coord_flag = 3) -->
          <site_lat> -97.52130 </site_lat>              <!-- y components of site coordinate in Longitude (if site_coord_flag = 3)-->
        </sensor>
-   </metParams>
+   </metParams>    
 
 The second part of sensor definition is choosing type of profile for
 different time steps, if applicable. The <timeSeries> variable is
@@ -428,14 +428,14 @@ QES-Winds: 1) Logarithmic velocity profile, based on Eq.
                <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
             </timeSeries>
        </sensor>
-   </metParams>
+   </metParams>    
 
 Figure `8 <#fig:log_profile>`__ shows velocity magnitude contour with
 overlaying velocity vectors of initial velocity field created by the
 aforementioned example of the logarithmic profile.
 
 .. figure:: Images/log_y_101.png
-   :alt:
+   :alt: 
 
 ) Exponential (power law) velocity profile, based on Eq.
 `[eq:power_law] <#eq:power_law>`__:
@@ -453,14 +453,14 @@ aforementioned example of the logarithmic profile.
                <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
             </timeSeries>
        </sensor>
-   </metParams>
+   </metParams>    
 
 Figure `9 <#fig:exp>`__ shows velocity magnitude contour with overlaying
 velocity vectors of the initial velocity field created by the
 aforementioned example of the exponential (power law) profile.
 
 .. figure:: Images/exp_y_101.png
-   :alt:
+   :alt: 
 
 ) Urban canopy velocity profile, based on Eq.
 `[eq:urban_canopy_low] <#eq:urban_canopy_low>`__ and
@@ -481,18 +481,18 @@ aforementioned example of the exponential (power law) profile.
                  <attenuationCoefficient> 1.0 </attenuationCoefficient>
             </timeSeries>
        </sensor>
-   </metParams>
+   </metParams>    
 
 Figure `10 <#fig:canopy>`__ shows velocity magnitude contour with
 overlaying velocity vectors of the initial velocity field created by the
 aforementioned example of the urban canopy profile.
 
 .. figure:: Images/canopy_y_101.png
-   :alt:
+   :alt: 
 
 ) Data entry of the profile from an experimental tower with multiple
 sensors or from a numerical mesoscale weather prediction model like WRF
-:raw-latex:`\cite{powers2017weather}`:
+:cite:t:`powers2017weather`:
 
 .. code:: xml
 
@@ -503,10 +503,10 @@ sensors or from a numerical mesoscale weather prediction model like WRF
              <siteZ0> 0.1 </siteZ0>                                    <!-- Site z0 -->
              <reciprocal> 0.0 </reciprocal>                        <!-- Reciprocal Monin-Obukhov Length (1/m) -->
              <height> 30.7015 </height>                            <!-- Height of the sensor -->
-             <height> 74.4169 </height>
-             <height> 144.644 </height>
-             <height> 197.455 </height>
-             <height> 268.468 </height>
+             <height> 74.4169 </height> 
+             <height> 144.644 </height> 
+             <height> 197.455 </height> 
+             <height> 268.468 </height> 
              <speed> 2.56922 </speed>                          <!-- Measured speed at the sensor height -->
              <speed> 2.55532 </speed>
              <speed> 2.33319 </speed>
@@ -519,7 +519,7 @@ sensors or from a numerical mesoscale weather prediction model like WRF
              <direction> 344.273 </direction>
            </timeSeries>
        </sensor>
-   </metParams>
+   </metParams>    
 
 Empirical Parameterizations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -543,14 +543,13 @@ Upwind cavity as described in
 is the parameterization representing upwind and stagnation effects of
 the building on the fluid flow. There are three options available for
 this type of parameterization in QES-Winds. The first option based on
-the parameterization proposed by Röckle
-:raw-latex:`\cite{rockle1990bestimmung}` and later Kaplan and Dinar
-:raw-latex:`\cite{kaplan1996lagrangian}`. They defined an ellipsoid to
-represent what they call is the displacement zone in front of the
-building. The length of the displacement zone, :math:`L_F`, is defined
-by Eq. `[eq:lf] <#eq:lf>`__. The shape of the ellipsoid is estimated by
-Eq. `[eq:upwind] <#eq:upwind>`__. Finally, the initial velocity
-components in the displacement zone are set to zero.
+the parameterization proposed by Röckle :cite:t:`rockle1990bestimmung`
+and later Kaplan and Dinar :cite:t:`kaplan1996lagrangian`. They defined
+an ellipsoid to represent what they call is the displacement zone in
+front of the building. The length of the displacement zone, :math:`L_F`,
+is defined by Eq. `[eq:lf] <#eq:lf>`__. The shape of the ellipsoid is
+estimated by Eq. `[eq:upwind] <#eq:upwind>`__. Finally, the initial
+velocity components in the displacement zone are set to zero.
 
 .. math::
 
@@ -584,41 +583,41 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    :name: fig:upwind_1_vert
 
    .. figure:: Images/upwind_y_100_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_y_100_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_y_100_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:upwind_1_horiz
 
    .. figure:: Images/upwind_z_5_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_z_5_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_z_5_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 The second option is called the Modified Vortex Parameterization (MVP)
-and created by Bagal et al. :raw-latex:`\cite{bagal2004improved}`. In
-this parameterization, the length of the displacement zone, :math:`L_F`,
-is calculated by Eq. `[eq:lf_MVP] <#eq:lf_MVP>`__. The MVP
-parameterization defines two ellipsoids instead of one: In the outer
-ellipsoid, velocities are reduced to :math:`40\%` of their initial
-values while in the inner region, velocity components are set to zero
-:raw-latex:`\cite{nelson20085}`. Both ellipsoids are extended to
-:math:`0.6` of the building height.
+and created by Bagal et al. :cite:t:`bagal2004improved`. In this
+parameterization, the length of the displacement zone, :math:`L_F`, is
+calculated by Eq. `[eq:lf_MVP] <#eq:lf_MVP>`__. The MVP parameterization
+defines two ellipsoids instead of one: In the outer ellipsoid,
+velocities are reduced to :math:`40\%` of their initial values while in
+the inner region, velocity components are set to zero
+:cite:t:`nelson20085`. Both ellipsoids are extended to :math:`0.6` of
+the building height.
 
 .. math::
 
@@ -647,36 +646,36 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    :name: fig:upwind_2_vert
 
    .. figure:: Images/upwind_y_100_2_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_y_100_2_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_y_100_2_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:upwind_2_horiz
 
    .. figure:: Images/upwind_z_5_2_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_z_5_2_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_z_5_2_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 The third option is called the high-rise MVP algorithm (HMVP) and is
 designed to address the shortcomings of the previous models when it
-comes to tall buildings :raw-latex:`\cite{nelson20085}`. The length of
-the displacement zone is calculated the same as Eq.
+comes to tall buildings :cite:t:`nelson20085`. The length of the
+displacement zone is calculated the same as Eq.
 `[eq:lf_MVP] <#eq:lf_MVP>`__. The HMVP algorithm creates two ellipsoids
 with the difference that the inner region only extends to :math:`60\%`
 of the minimum of building height and building width. In addition, the
@@ -703,30 +702,30 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    :name: fig:upwind_3_vert
 
    .. figure:: Images/upwind_y_100_3_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_y_100_3_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_y_100_3_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:upwind_3_horiz
 
    .. figure:: Images/upwind_z_5_3_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_z_5_3_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_z_5_3_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 In order to choose between these three upwind models, the user needs to
@@ -736,7 +735,7 @@ change the value of "upwindCavityFlag" in the XML file.
 
    <simulationParameters>
        <upwindCavityFlag> 2 </upwindCavityFlag>            <!-- Upwind cavity flag (0-none, 1-Rockle, 2-MVP (default), 3-HMVP) -->
-   </simulationParameters>
+   </simulationParameters>    
 
 Leeside Cavity and Far-Wake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -745,11 +744,11 @@ The far-wake and cavity parameterization described in
 :raw-latex:`\cite{singh2005testing, singh2006testing}` are a significant
 part of the building parameterizations. The one available in QES-Winds
 is based on the parameterization proposed by Röckle
-:raw-latex:`\cite{rockle1990bestimmung}` and later Kaplan and Dinar
-:raw-latex:`\cite{kaplan1996lagrangian}`. The Röckle parameterization
-defines two ellipsoids to represent the shape of the reversed flow
-cavity and the far-wake region. The reversed flow cavity extends to the
-along-wind cavity length (:math:`L_R`), which is calculated as Eq.
+:cite:t:`rockle1990bestimmung` and later Kaplan and Dinar
+:cite:t:`kaplan1996lagrangian`. The Röckle parameterization defines two
+ellipsoids to represent the shape of the reversed flow cavity and the
+far-wake region. The reversed flow cavity extends to the along-wind
+cavity length (:math:`L_R`), which is calculated as Eq.
 `[eq:Lr] <#eq:Lr>`__, and wake is assumed to be approximately :math:`3`
 cavity lengths long (i.e., :math:`3L_R`). After calculating :math:`L_R`,
 the cavity length, :math:`d` in the stream-wise direction was defined by
@@ -803,30 +802,30 @@ velocity magnitude contour with overlaying velocity vectors of initial
    :name: fig:wake_vert
 
    .. figure:: Images/wake_y_100_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/wake_y_100_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/wake_y_100_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:wake_horiz
 
    .. figure:: Images/wake_z_5_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/wake_z_5_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/wake_z_5_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 In order to turn on the wake model, the user needs to change the value
@@ -836,25 +835,24 @@ of "wakeFlag" in the XML file.
 
    <simulationParameters>
        <wakeFlag> 1 </wakeFlag>                <!-- Wake flag (0-none, 1-Rockle (default)) -->
-   </simulationParameters>
+   </simulationParameters>    
 
 Street Canyon
 ^^^^^^^^^^^^^
 
 The street canyon parameterization detailed in
-:raw-latex:`\cite{singh2008evaluation}` represents the effects of two
-buildings in close vicinity to each other, on the fluid flow. Röckle
-:raw-latex:`\cite{rockle1990bestimmung}` Introduced velocity
-parameterizations for the stream-wise components as in Eq.
-`[eq:u_can] <#eq:u_can>`__ and the vertical component as in Eq.
-`[eq:w_can] <#eq:w_can>`__.
+:cite:t:`singh2008evaluation` represents the effects of two buildings in
+close vicinity to each other, on the fluid flow. Röckle
+:cite:t:`rockle1990bestimmung` Introduced velocity parameterizations for
+the stream-wise components as in Eq. `[eq:u_can] <#eq:u_can>`__ and the
+vertical component as in Eq. `[eq:w_can] <#eq:w_can>`__.
 
 .. math::
 
    \frac{u(x, y, z)}{U(H)}=-\frac{x_{\mathrm{can}}}{(0.5 S)}\left(\frac{S-x_{\mathrm{can}}}{0.5 S}\right)
    \label{eq:u_can}
 
-|
+| 
 
   .. math::
 
@@ -865,11 +863,11 @@ parameterizations for the stream-wise components as in Eq.
   building.
 
 In order to identify the criteria to determine the existence of a street
-canyon, Singh et al. :raw-latex:`\cite{singh2008evaluation}` utilized
-the cavity length, :math:`L_R` (Eq. `[eq:Lr] <#eq:Lr>`__), for the
-upwind building. If :math:`S \textless L_R`, the street canyon
-parameterization is applied, otherwise, the upwind building is
-considered as an isolated building.
+canyon, Singh et al. :cite:t:`singh2008evaluation` utilized the cavity
+length, :math:`L_R` (Eq. `[eq:Lr] <#eq:Lr>`__), for the upwind building.
+If :math:`S \textless L_R`, the street canyon parameterization is
+applied, otherwise, the upwind building is considered as an isolated
+building.
 
 Part (a) of Figure `19 <#fig:street_vert>`__ and Figure
 `20 <#fig:street_horiz>`__ show cell type contour to represent the area
@@ -896,30 +894,30 @@ horizontal plane at :math:`z=5\ \si{\meter}`, respectively.
    :name: fig:street_vert
 
    .. figure:: Images/street_y_100_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/street_y_100_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/street_y_100_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:street_horiz
 
    .. figure:: Images/street_z_5_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/street_z_5_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/street_z_5_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 To turn on the street canyon parameterization, the user needs to change
@@ -929,7 +927,7 @@ the value of "streetCanyonFlag" in the XML file.
 
    <simulationParameters>
        <streetCanyonFlag> 1 </streetCanyonFlag>            <!-- Street canyon flag (0-none, 1-Roeckle w/ Fackrel (default)) -->
-   </simulationParameters>
+   </simulationParameters>    
 
 Rooftop Recirculation
 ^^^^^^^^^^^^^^^^^^^^^
@@ -954,7 +952,7 @@ length as the vortex and half of the height.
    L_{\mathrm{c}}=0.9 R
    \label{eq:Lc}
 
-|
+| 
 
   .. math::
 
@@ -984,15 +982,15 @@ velocity fields in a vertical plane at :math:`y=100\ \si{\meter}`.
    :name: fig:rooftop_vert
 
    .. figure:: Images/rooftop_y_100_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/rooftop_y_100_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/rooftop_y_100_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 To turn the parameterization on, the user needs to change the value of
@@ -1002,23 +1000,23 @@ To turn the parameterization on, the user needs to change the value of
 
    <simulationParameters>
        <rooftopFlag> 1 </rooftopFlag>                  <!-- Rooftop flag (0-none, 1-log profile (default)) -->
-   </simulationParameters>
+   </simulationParameters>    
 
 Sidewall Recirculation Zone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The sidewall parameterization is designed to represent the effects of
 the edge of the building on the upwind field
-:raw-latex:`\cite{hayati2017comprehensive}`. It first checks if a face
-has an outward normal vector nominally (:math:`\pm 10\degree`)
-perpendicular to the local wind vector. The important parameters
-controlling the sidewall vortex strength and geometry are:
+:cite:t:`hayati2017comprehensive`. It first checks if a face has an
+outward normal vector nominally (:math:`\pm 10\degree`) perpendicular to
+the local wind vector. The important parameters controlling the sidewall
+vortex strength and geometry are:
 
 .. math:: R=B_{\mathrm{s}}^{2 / 3} B_{l}^{1 / 3}
 
 .. math:: L_{\mathrm{c}}=0.9 R
 
-|
+| 
 
   .. math:: W_{\mathrm{c}}=0.22 R
 | where :math:`B_s` is the smaller of the height (:math:`H`) and the
@@ -1046,15 +1044,15 @@ velocity fields in a horizontal plane at :math:`z=5\ \si{\meter}`.
    :name: fig:sidewall_horiz
 
    .. figure:: Images/sidewall_z_5_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/sidewall_z_5_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/sidewall_z_5_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 In order to turn the algorithm on, the user needs to change the value of
@@ -1064,7 +1062,7 @@ In order to turn the algorithm on, the user needs to change the value of
 
    <simulationParameters>
        <sidewallFlag> 1 </sidewallFlag>                <!-- Sidewall flag (0-off, 1-on (default)) -->
-   </simulationParameters>
+   </simulationParameters>    
 
 Mass Consistent Solver
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1072,21 +1070,20 @@ Mass Consistent Solver
 QES-Winds have mass conserving wind field solvers that rapidly compute
 wind fields using a variational method rather than slower yet more
 physics based solvers that include conservation of momentum
-:raw-latex:`\cite{kim2014effects}`. While the QES-Winds method uses
-reduced order physics in the numerical solution of urban flow problems,
-the solutions are rapid and compare quite well higher order
-physics-based models in both idealized
-:raw-latex:`\cite{hayati2017comprehensive}` and realistic urban cities
-:raw-latex:`\cite{neophytou2011inter}`. The method minimizes the
-difference between an initial wind field that is specified using
-empirical parameterizations :raw-latex:`\cite{singh2008evaluation}` and
-the final wind fields. The empirical parameterizations account for
-complex wind fields around buildings such as wake cavities downstream of
-a building. To obtain a quasi-time-averaged velocity field, QES-Winds
-uses a variational analysis technique
-:raw-latex:`\cite{singh2008evaluation}`. This method requires the
-solution of a Poisson equation for Lagrange multipliers, :math:`\lambda`
-(Equation `[poisson] <#poisson>`__) in the following form:
+:cite:t:`kim2014effects`. While the QES-Winds method uses reduced order
+physics in the numerical solution of urban flow problems, the solutions
+are rapid and compare quite well higher order physics-based models in
+both idealized :cite:t:`hayati2017comprehensive` and realistic urban
+cities :cite:t:`neophytou2011inter`. The method minimizes the difference
+between an initial wind field that is specified using empirical
+parameterizations :cite:t:`singh2008evaluation` and the final wind
+fields. The empirical parameterizations account for complex wind fields
+around buildings such as wake cavities downstream of a building. To
+obtain a quasi-time-averaged velocity field, QES-Winds uses a
+variational analysis technique :cite:t:`singh2008evaluation`. This
+method requires the solution of a Poisson equation for Lagrange
+multipliers, :math:`\lambda` (Equation `[poisson] <#poisson>`__) in the
+following form:
 
 .. math::
 
@@ -1146,8 +1143,7 @@ parallel, the global memory and the shared memory. The CPU solver is
 quite rapid, but slow in comparison to the GPU solvers since it is a
 serial solver and does not have parallel computing capabilities,
 especially for large domains. For more information regarding different
-types of solvers available in QES-Winds, read
-:raw-latex:`\cite{Bozorgmehr2021}`.
+types of solvers available in QES-Winds, read :cite:t:`Bozorgmehr2021`.
 
 Building and Running QES-Winds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
