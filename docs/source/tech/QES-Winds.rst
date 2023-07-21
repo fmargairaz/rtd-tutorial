@@ -1,17 +1,13 @@
-.. role:: raw-latex(raw)
-   :format: latex
-..
-
 QES-Winds: Fast-response Wind Solver
 ====================================
 
 Introduction
-------------
+~~~~~~~~~~~~
 
 A new dispersion modeling system based on the well-used FORTRAN-based
 QUIC (Quick Urban and Industrial Complex) dispersion modeling system
 originally developed by the University of Utah and Los Alamos National
-Laboratory :raw-latex:`\cite{brown2013quic}`, has been under development
+Laboratory :cite:t:`brown2013quic`, has been under development
 as collaboration between the University of Utah and the University of
 Minnesota, Duluth. Quick Environmental Simulation (QES) is a
 microclimate simulation platform for computing 3D environmental scalars
@@ -30,7 +26,7 @@ high-level flowchart for QES-Winds code.
    :width: 17cm
 
 QES-Winds Domain
-----------------
+~~~~~~~~~~~~~~~~
 
 The first step in every computational code or package is to define the
 computational domain. The user can define the domain by specifying the
@@ -38,7 +34,7 @@ number of cells in :math:`x`, :math:`y` and :math:`z` directions as well
 as the cell size in each direction in the input file (XML file).
 
 XML Example
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 The domain information (number of cells and cell size) are defined under
 the <simulationParameters> part of the XML file. Following is an example
@@ -55,7 +51,7 @@ of :math:`2\ \si{\metre}` by :math:`2\ \si{\metre}` by
    </simulationParameters>
 
 Staggered Grid
---------------
+~~~~~~~~~~~~~~
 
 QES-Winds discretizes the computational domain using a staggered grid as
 shown in Figure `2 <#fig:staggered_grid>`__. The velocity components
@@ -79,7 +75,7 @@ neighboring cell for the finite difference method.
    :alt:
 
 Halo Region
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 If a solid element (building or terrain) overlaps with the QES domain
 boundaries, QES-Winds cannot model the wind field around the element
@@ -108,7 +104,7 @@ length of the halo in :math:`x` and :math:`y` directions, respectively.
    </simulationParameters>
 
 Digital Elevation Model (DEM) and ESRI Shapefile
-------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The current version of QES-Winds has been written to allow commonly
 available terrain and building geometry datasets to be used for
@@ -116,7 +112,7 @@ simulations. In this section, various input file formats for QES-Winds
 will be covered.
 
 Terrain Features
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 Using the Geospatial Data Abstraction Library (GDAL;
 https://www.gdal.org), we are able to load geo-referenced datasets of
@@ -162,7 +158,7 @@ the <simulationParameters> part in the XML file:
    </simulationParameters>
 
 Process Part of DEM
-^^^^^^^^^^^^^^^^^^^
+'''''''''''''''''''
 
 In some cases, user wants to load a giant DEM but only process part of
 the file. This is possible in QES-Winds by defining the origin of QES
@@ -203,7 +199,7 @@ origin in :math:`x` and :math:`y` directions, respectively.
    </simulationParameters>
 
 Automated City Building
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 A new shapefile reader function has been added to QES-Winds, which
 provides the capacity to load the ESRI shapefiles using GDAL (Geospatial
@@ -245,7 +241,7 @@ actual height of the buildings using the <heightFactor> under
 .. _`sec:building`:
 
 Import Building From XML
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Instead of reading in a ESRI shapefile, the user can import building
 information manually through the XML file. This can be done by using the
@@ -277,7 +273,7 @@ the surface roughness for all the building walls.
    </buildings>
 
 Initial Wind Field
-------------------
+~~~~~~~~~~~~~~~~~~
 
 QES-Winds can read a single or multiple sensors for a specific test
 case. In this context, sensor means the velocity magnitude and direction
@@ -308,22 +304,21 @@ type of profile: 1) a logarithmic profile (Eq.
    \label{eq:urban_canopy_low}
    u_{uc}(z\leq H) = u(H).exp(\alpha(\frac{z}{H}-1))
 
-|
+.. math::
 
-  .. math::
+   \label{eq:urban_canopy_up}
+   u_{uc}(z > H) = \frac{u_*}{\kappa}.ln(\frac{z-d}{z_0})
 
-     \label{eq:urban_canopy_up}
-     u_{uc}(z > H) = \frac{u_*}{\kappa}.ln(\frac{z-d}{z_0})
-| where :math:`u_{ref}` is the measured velocity at measured height
-  :math:`z_{ref}`, :math:`z_0` is the surface roughness. The lower
-  portion of the urban canopy profile calculated in Eq.
-  `[eq:urban_canopy_low] <#eq:urban_canopy_low>`__ where :math:`\alpha`
-  is a factor that depends on canopy element density (attenuation
-  coefficient) and :math:`u(H)` is the computed velocity at height
-  :math:`H`. The upper portion of the urban canopy is a different form
-  of a logarithmic profile where :math:`u_*` is the friction velocity,
-  :math:`\kappa` is the von Karman constant at  0.4 and :math:`d` is the
-  zero plane displacement.
+where :math:`u_{ref}` is the measured velocity at measured height
+:math:`z_{ref}`, :math:`z_0` is the surface roughness. The lower portion
+of the urban canopy profile calculated in Eq.
+`[eq:urban_canopy_low] <#eq:urban_canopy_low>`__ where :math:`\alpha` is
+a factor that depends on canopy element density (attenuation
+coefficient) and :math:`u(H)` is the computed velocity at height
+:math:`H`. The upper portion of the urban canopy is a different form of
+a logarithmic profile where :math:`u_*` is the friction velocity,
+:math:`\kappa` is the von Karman constant at  0.4 and :math:`d` is the
+zero plane displacement.
 
 If there is only one sensor available in the computational domain, the
 code will extend the profile for that sensor uniformly to the whole
@@ -336,7 +331,7 @@ on the weighted distance from each sensor.
 .. _`sec:sensor_xml`:
 
 XML Setup
-~~~~~~~~~
+^^^^^^^^^
 
 There are two options available for defining sensor information: 1) the
 user can put all the sensor information in a separate XML file and
@@ -527,7 +522,7 @@ sensors or from a numerical mesoscale weather prediction model like WRF
    </metParams>
 
 Empirical Parameterizations
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 QES-Winds only conserves mass and no momentum equation is solved. As a
 result, the solution is a potential-flow solution (no shear effects). In
@@ -541,7 +536,7 @@ This section covers available parameterizations in QES-Winds along with
 their effects on the wind field.
 
 Upwind Cavity
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Upwind cavity as described in
 :raw-latex:`\cite{nelson20085,bagal2004improved, gowardhan2010evaluation}`
@@ -562,14 +557,13 @@ components in the displacement zone are set to zero.
    \frac{L_{\mathrm{F}}}{H}=\frac{2(W / H)}{1+0.8 W / H}
    \label{eq:lf}
 
-|
+.. math::
 
-  .. math::
+   \frac{X^{2}}{L_{\mathrm{F}}^{2}\left(1-(Z / 0.6 H)^{2}\right)}+\frac{Y^{2}}{W^{2}}=1
+   \label{eq:upwind}
 
-     \frac{X^{2}}{L_{\mathrm{F}}^{2}\left(1-(Z / 0.6 H)^{2}\right)}+\frac{Y^{2}}{W^{2}}=1
-     \label{eq:upwind}
-| where :math:`L`, :math:`H` and :math:`W` are length, width and height
-  of the building, receptively.
+where :math:`L`, :math:`H` and :math:`W` are length, width and height of
+the building, receptively.
 
 Part (a) of Figure `11 <#fig:upwind_1_vert>`__ and Figure
 `12 <#fig:upwind_1_horiz>`__ show cell type contour to represent the
@@ -626,14 +620,13 @@ values while in the inner region, velocity components are set to zero
 :raw-latex:`\cite{nelson20085}`. Both ellipsoids are extended to
 :math:`0.6` of the building height.
 
-|
+.. math::
 
-  .. math::
+   \frac{L_{\mathrm{F}}}{H}=\frac{1.5(W / H)}{1+0.8 W / H}
+   \label{eq:lf_MVP}
 
-     \frac{L_{\mathrm{F}}}{H}=\frac{1.5(W / H)}{1+0.8 W / H}
-     \label{eq:lf_MVP}
-| where :math:`L`, :math:`H` and :math:`W` are length, width and height
-  of the building, receptively.
+where :math:`L`, :math:`H` and :math:`W` are length, width and height of
+the building, receptively.
 
 Part (a) of Figure `11 <#fig:upwind_1_vert>`__ and Figure
 `12 <#fig:upwind_1_horiz>`__ show cell type contour to represent the
@@ -736,8 +729,8 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
       :alt:
       :width: 11cm
 
-| In order to choose between these three upwind models, the user needs
-  to change the value of "upwindCavityFlag" in the XML file.
+In order to choose between these three upwind models, the user needs to
+change the value of "upwindCavityFlag" in the XML file.
 
 .. code:: xml
 
@@ -746,7 +739,7 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    </simulationParameters>
 
 Leeside Cavity and Far-Wake
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The far-wake and cavity parameterization described in
 :raw-latex:`\cite{singh2005testing, singh2006testing}` are a significant
@@ -780,17 +773,16 @@ is estimated by Eq. `[eq:wake] <#eq:wake>`__.
    \frac{u(x, y, z)}{U(H)}=-\left(1-\left(\frac{x}{d}\right)^{2}\right)
    \label{eq:cavity}
 
-|
+.. math::
 
-  .. math::
+   \frac{u(x, y, z)}{U(H)}=\left(1-\left(\frac{d}{x}\right)^{1.5}\right)
+   \label{eq:wake}
 
-     \frac{u(x, y, z)}{U(H)}=\left(1-\left(\frac{d}{x}\right)^{1.5}\right)
-     \label{eq:wake}
-| where :math:`L`, :math:`H` and :math:`W` are length, width and height
-  of the building, receptively. :math:`u(x,y,z)` is the velocity at
-  point :math:`(x,y,z)`, :math:`U(H)` is the reference velocity at
-  height of the building and :math:`x` is the distance from the building
-  in the stream-wise direction.
+where :math:`L`, :math:`H` and :math:`W` are length, width and height of
+the building, receptively. :math:`u(x,y,z)` is the velocity at point
+:math:`(x,y,z)`, :math:`U(H)` is the reference velocity at height of the
+building and :math:`x` is the distance from the building in the
+stream-wise direction.
 
 Part (a) of Figure `17 <#fig:wake_vert>`__ and Figure
 `18 <#fig:wake_horiz>`__ show cell type contour to represent the area of
@@ -847,7 +839,7 @@ of "wakeFlag" in the XML file.
    </simulationParameters>
 
 Street Canyon
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 The street canyon parameterization detailed in
 :raw-latex:`\cite{singh2008evaluation}` represents the effects of two
@@ -940,7 +932,7 @@ the value of "streetCanyonFlag" in the XML file.
    </simulationParameters>
 
 Rooftop Recirculation
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 The rooftop parameterization described in
 :raw-latex:`\cite{bagal2004implementation, pol2006implementation}`,
@@ -1013,7 +1005,7 @@ To turn the parameterization on, the user needs to change the value of
    </simulationParameters>
 
 Sidewall Recirculation Zone
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The sidewall parameterization is designed to represent the effects of
 the edge of the building on the upwind field
@@ -1075,7 +1067,7 @@ In order to turn the algorithm on, the user needs to change the value of
    </simulationParameters>
 
 Mass Consistent Solver
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 QES-Winds have mass conserving wind field solvers that rapidly compute
 wind fields using a variational method rather than slower yet more
@@ -1096,21 +1088,19 @@ uses a variational analysis technique
 solution of a Poisson equation for Lagrange multipliers, :math:`\lambda`
 (Equation `[poisson] <#poisson>`__) in the following form:
 
-|
+.. math::
 
-  .. math::
+   \label{poisson}
+   \frac{\partial^2\lambda}{\partial x^2} + \frac{\partial^2\lambda}{\partial y^2} + (\frac{\alpha_1}{\alpha_2})^2\:  \frac{\partial^2\lambda}{\partial z^2} = R
 
-     \label{poisson}
-     \frac{\partial^2\lambda}{\partial x^2} + \frac{\partial^2\lambda}{\partial y^2} + (\frac{\alpha_1}{\alpha_2})^2\:  \frac{\partial^2\lambda}{\partial z^2} = R
-| Where R is divergence of the initial wind field and is defined as:
+Where R is divergence of the initial wind field and is defined as:
 
-|
+.. math::
 
-  .. math::
+   \label{divergence}
+    R = -2\,\alpha_1^2\,\Bigg[\frac{u_{i+1/2}^0-u_{i-1/2}^0}{\Delta x} + \frac{v_{j+1/2}^0-v_{j-1/2}^0}{\Delta y} + \frac{w_{k+1/2}^0-w_{k-1/2}^0}{\Delta z}\Bigg]
 
-     \label{divergence}
-      R = -2\,\alpha_1^2\,\Bigg[\frac{u_{i+1/2}^0-u_{i-1/2}^0}{\Delta x} + \frac{v_{j+1/2}^0-v_{j-1/2}^0}{\Delta y} + \frac{w_{k+1/2}^0-w_{k-1/2}^0}{\Delta z}\Bigg]
-| The final velocity field is updated using Euler-Lagrange equations:
+The final velocity field is updated using Euler-Lagrange equations:
 
 .. math::
 
@@ -1122,24 +1112,23 @@ solution of a Poisson equation for Lagrange multipliers, :math:`\lambda`
    \label{eu-lag2}
     v = v^0 + \frac{1}{2\,\alpha_1^2\,\Delta y}\,[\lambda_{i,\,j+1,\,k}-\lambda_{i,\,j,\,k}]
 
-|
+.. math::
 
-  .. math::
+   \label{eu-lag3}
+    w = w^0 + \frac{1}{2\,\alpha_2^2\,\Delta z}\,[\lambda_{i,\,j,\,k+1}-\lambda_{i,\,j,\,k}]
 
-     \label{eu-lag3}
-      w = w^0 + \frac{1}{2\,\alpha_2^2\,\Delta z}\,[\lambda_{i,\,j,\,k+1}-\lambda_{i,\,j,\,k}]
-| The Poisson equation is solved using the Successive Over-Relaxation
-  (SOR) method which is a variant of Gauss-Seidel method with faster
-  convergence. Applying SOR to Equation `[poisson] <#poisson>`__ results
-  in:
+The Poisson equation is solved using the Successive Over-Relaxation
+(SOR) method which is a variant of Gauss-Seidel method with faster
+convergence. Applying SOR to Equation `[poisson] <#poisson>`__ results
+in:
 
-  .. math::
+.. math::
 
-     \label{SOR}
-     \begin{split}
-      \lambda_{i,\,j,\,k} & = \frac{\omega\Bigg[(\Delta x)^2 R_{i,\,j,\,k}+e\,\lambda_{i+1}+f\, \lambda_{i-1}+A(g\,\lambda_{j+1}+h\, \lambda_{j-1}) + B(m\,\lambda_{k+1}+n\, \lambda_{k-1})\Bigg]}{e+f+g+h+m+n}\\
-      & +(1-\omega)\lambda_{i,\,j,\,k}
-      \end{split}
+   \label{SOR}
+   \begin{split}
+    \lambda_{i,\,j,\,k} & = \frac{\omega\Bigg[(\Delta x)^2 R_{i,\,j,\,k}+e\,\lambda_{i+1}+f\, \lambda_{i-1}+A(g\,\lambda_{j+1}+h\, \lambda_{j-1}) + B(m\,\lambda_{k+1}+n\, \lambda_{k-1})\Bigg]}{e+f+g+h+m+n}\\
+    & +(1-\omega)\lambda_{i,\,j,\,k}
+    \end{split}
 
 Where e,f,g,h,m,n are boundary condition coefficients and A and B are
 domain constants. :math:`\omega = 1.78` is the SOR relaxation factor.
@@ -1148,7 +1137,7 @@ The boundary condition for solid surfaces is
 surfaces it is :math:`\lambda=0`.
 
 Solver Types
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 QES-Winds has four options for solving the SOR equation discussed above,
 the first option is to solve the equation on the CPU and the rest use
@@ -1161,7 +1150,7 @@ types of solvers available in QES-Winds, read
 :raw-latex:`\cite{Bozorgmehr2021}`.
 
 Building and Running QES-Winds
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section is designed to serve as a step-by-step instruction of how
 to build and run QES-Winds. In the first part, packages required to
@@ -1174,7 +1163,7 @@ this section will cover a brief description of how to change the input
 files of the code and run it.
 
 Required Packages
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 The very first package needed to be installed is ”git” package. It
 provides the ability to interact with GitHub and use commands to clone
@@ -1200,7 +1189,7 @@ version of gcc that is compatible with the version of CUDA and OS is
 required. For CUDA, at least version 8.0 needs to be installed.
 
 Cloning QES-Winds from GitHub
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After making sure all the required packages are installed and ready to
 use, a copy of QES-Winds needs to be downloaded on the local computer
@@ -1212,7 +1201,7 @@ button ”Code” and copy the ”HTTPS” address. It downloads a copy of the
 code in the “master” branch of the repository in your local directory.
 
 Building Executable of QES-Winds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Next steps are:
 
@@ -1235,7 +1224,7 @@ those packages.
    ”qesWinds”
 
 Running QES-Winds
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
 
 The command to run the QES-Winds executable created above is:
 
