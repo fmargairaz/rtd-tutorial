@@ -25,7 +25,7 @@ utilizes the concept of dynamic parallelism in CUDA to substantially
 accelerate wind simulations. Figure `1 <#fig:Winds>`__ shows a
 high-level flowchart for QES-Winds code.
 
-.. figure:: {Images/QES_flowchart.png}
+.. figure:: Images/QES_flowchart.png
    :alt:
    :width: 17cm
 
@@ -89,7 +89,7 @@ shapefile is read into the code. Figure `3 <#fig:halo>`__ represents how
 the halo region is added to the domain around a Digital Elevation Model
 (DEM) or a shapefile.
 
-.. figure:: {Images/domain_halo.png}
+.. figure:: Images/domain_halo.png
    :alt:
    :width: 11cm
 
@@ -170,7 +170,7 @@ domain inside the DEM borders and the size of the QES domain. Figure
 `5 <#fig:DEM_cut>`__ shows a schematic of how the QES domain can be
 defined inside a DEM file and only process that part.
 
-.. figure:: {Images/DEM_cut.png}
+.. figure:: Images/DEM_cut.png
    :alt:
    :width: 13cm
 
@@ -221,11 +221,11 @@ plot indicates the ability of QES-Winds to read in and process ESRI
 shapefiles. The cell type value :math:`0` (blue) represents the building
 cells while value :math:`1` (red) indicates the air cells.
 
-.. figure:: {Images/OKC.png}
+.. figure:: Images/OKC.png
    :alt:
    :width: 13cm
 
-.. figure:: {Images/oklahoma_z_3_icell.png}
+.. figure:: Images/oklahoma_z_3_icell.png
    :alt:
 
 The user can define the address to the shapefile using <SHP> variable as
@@ -439,7 +439,7 @@ Figure `8 <#fig:log_profile>`__ shows velocity magnitude contour with
 overlaying velocity vectors of initial velocity field created by the
 aforementioned example of the logarithmic profile.
 
-.. figure:: {Images/log_y_101.png}
+.. figure:: Images/log_y_101.png
    :alt:
 
 ) Exponential (power law) velocity profile, based on Eq.
@@ -464,7 +464,7 @@ Figure `9 <#fig:exp>`__ shows velocity magnitude contour with overlaying
 velocity vectors of the initial velocity field created by the
 aforementioned example of the exponential (power law) profile.
 
-.. figure:: {Images/exp_y_101.png}
+.. figure:: Images/exp_y_101.png
    :alt:
 
 ) Urban canopy velocity profile, based on Eq.
@@ -492,7 +492,7 @@ Figure `10 <#fig:canopy>`__ shows velocity magnitude contour with
 overlaying velocity vectors of the initial velocity field created by the
 aforementioned example of the urban canopy profile.
 
-.. figure:: {Images/canopy_y_101.png}
+.. figure:: Images/canopy_y_101.png
    :alt:
 
 ) Data entry of the profile from an experimental tower with multiple
