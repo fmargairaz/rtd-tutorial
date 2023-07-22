@@ -22,7 +22,7 @@ accelerate wind simulations. Figure `1 <#fig:Winds>`__ shows a
 high-level flowchart for QES-Winds code.
 
 .. figure:: Images/QES_flowchart.png
-   :alt:
+   :alt: 
    :width: 17cm
 
 QES-Winds Domain
@@ -72,7 +72,7 @@ Lagrange multipliers (boundary condition) as well as providing the
 neighboring cell for the finite difference method.
 
 .. figure:: Images/staggered_grid_full.png
-   :alt:
+   :alt: 
 
 Halo Region
 ^^^^^^^^^^^
@@ -86,7 +86,7 @@ the halo region is added to the domain around a Digital Elevation Model
 (DEM) or a shapefile.
 
 .. figure:: Images/domain_halo.png
-   :alt:
+   :alt: 
    :width: 11cm
 
 In order to define length of the halo zone in :math:`x` and :math:`y`
@@ -141,11 +141,11 @@ while value :math:`2` (red) indicates the terrain cells.
    :name: fig:askervein
 
    .. figure:: Images/askervein_y_3000_icell.png
-      :alt:
+      :alt: 
       :width: 13cm
 
    .. figure:: Images/askervein_z_20_icell.png
-      :alt:
+      :alt: 
       :width: 13cm
 
 The user can define the address to the DEM using <DEM> variable under
@@ -167,7 +167,7 @@ domain inside the DEM borders and the size of the QES domain. Figure
 defined inside a DEM file and only process that part.
 
 .. figure:: Images/DEM_cut.png
-   :alt:
+   :alt: 
    :width: 13cm
 
 There are two options to determine the location of the origin of QES
@@ -218,11 +218,11 @@ shapefiles. The cell type value :math:`0` (blue) represents the building
 cells while value :math:`1` (red) indicates the air cells.
 
 .. figure:: Images/OKC.png
-   :alt:
+   :alt: 
    :width: 13cm
 
 .. figure:: Images/oklahoma_z_3_icell.png
-   :alt:
+   :alt: 
 
 The user can define the address to the shapefile using <SHP> variable as
 well as the name of the shapefile using the <SHPBuildingLayer> and the
@@ -435,7 +435,7 @@ overlaying velocity vectors of initial velocity field created by the
 aforementioned example of the logarithmic profile.
 
 .. figure:: Images/log_y_101.png
-   :alt:
+   :alt: 
 
 ) Exponential (power law) velocity profile, based on Eq.
 `[eq:power_law] <#eq:power_law>`__:
@@ -460,7 +460,7 @@ velocity vectors of the initial velocity field created by the
 aforementioned example of the exponential (power law) profile.
 
 .. figure:: Images/exp_y_101.png
-   :alt:
+   :alt: 
 
 ) Urban canopy velocity profile, based on Eq.
 `[eq:urban_canopy_low] <#eq:urban_canopy_low>`__ and
@@ -488,7 +488,7 @@ overlaying velocity vectors of the initial velocity field created by the
 aforementioned example of the urban canopy profile.
 
 .. figure:: Images/canopy_y_101.png
-   :alt:
+   :alt: 
 
 ) Data entry of the profile from an experimental tower with multiple
 sensors or from a numerical mesoscale weather prediction model like WRF
@@ -583,30 +583,30 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    :name: fig:upwind_1_vert
 
    .. figure:: Images/upwind_y_100_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_y_100_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_y_100_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:upwind_1_horiz
 
    .. figure:: Images/upwind_z_5_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_z_5_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_z_5_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 The second option is called the Modified Vortex Parameterization (MVP)
@@ -646,30 +646,30 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    :name: fig:upwind_2_vert
 
    .. figure:: Images/upwind_y_100_2_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_y_100_2_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_y_100_2_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:upwind_2_horiz
 
    .. figure:: Images/upwind_z_5_2_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_z_5_2_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_z_5_2_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 The third option is called the high-rise MVP algorithm (HMVP) and is
@@ -702,30 +702,30 @@ plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
    :name: fig:upwind_3_vert
 
    .. figure:: Images/upwind_y_100_3_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_y_100_3_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_y_100_3_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:upwind_3_horiz
 
    .. figure:: Images/upwind_z_5_3_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/upwind_z_5_3_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/upwind_z_5_3_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 In order to choose between these three upwind models, the user needs to
@@ -802,30 +802,30 @@ velocity magnitude contour with overlaying velocity vectors of initial
    :name: fig:wake_vert
 
    .. figure:: Images/wake_y_100_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/wake_y_100_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/wake_y_100_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:wake_horiz
 
    .. figure:: Images/wake_z_5_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/wake_z_5_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/wake_z_5_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 In order to turn on the wake model, the user needs to change the value
@@ -852,7 +852,7 @@ vertical component as in Eq. `[eq:w_can] <#eq:w_can>`__.
    \frac{u(x, y, z)}{U(H)}=-\frac{x_{\mathrm{can}}}{(0.5 S)}\left(\frac{S-x_{\mathrm{can}}}{0.5 S}\right)
    \label{eq:u_can}
 
-|
+| 
 
   .. math::
 
@@ -894,30 +894,30 @@ horizontal plane at :math:`z=5\ \si{\meter}`, respectively.
    :name: fig:street_vert
 
    .. figure:: Images/street_y_100_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/street_y_100_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/street_y_100_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 .. container:: float
    :name: fig:street_horiz
 
    .. figure:: Images/street_z_5_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/street_z_5_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/street_z_5_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 To turn on the street canyon parameterization, the user needs to change
@@ -952,7 +952,7 @@ length as the vortex and half of the height.
    L_{\mathrm{c}}=0.9 R
    \label{eq:Lc}
 
-|
+| 
 
   .. math::
 
@@ -982,15 +982,15 @@ velocity fields in a vertical plane at :math:`y=100\ \si{\meter}`.
    :name: fig:rooftop_vert
 
    .. figure:: Images/rooftop_y_100_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/rooftop_y_100_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/rooftop_y_100_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 To turn the parameterization on, the user needs to change the value of
@@ -1016,18 +1016,17 @@ vortex strength and geometry are:
 
 .. math:: L_{\mathrm{c}}=0.9 R
 
-|
+.. math:: W_{\mathrm{c}}=0.22 R
 
-  .. math:: W_{\mathrm{c}}=0.22 R
-| where :math:`B_s` is the smaller of the height (:math:`H`) and the
-  effective width (:math:`W_{eff}`) of the building, :math:`B_l` is the
-  larger of :math:`H` and :math:`W_{eff}` , :math:`R` is the vortex size
-  scaling factor, :math:`L_c` is the downwind length of the half-ellipse
-  that defines the vortex recirculation region, and :math:`W_c` is the
-  lateral width of the elliptical recirculation region. Within the
-  recirculation zone, the velocity is reversed and scaled linearly from
-  the reference wind speed near the wall to zero at the edge of the
-  ellipse.
+where :math:`B_s` is the smaller of the height (:math:`H`) and the
+effective width (:math:`W_{eff}`) of the building, :math:`B_l` is the
+larger of :math:`H` and :math:`W_{eff}` , :math:`R` is the vortex size
+scaling factor, :math:`L_c` is the downwind length of the half-ellipse
+that defines the vortex recirculation region, and :math:`W_c` is the
+lateral width of the elliptical recirculation region. Within the
+recirculation zone, the velocity is reversed and scaled linearly from
+the reference wind speed near the wall to zero at the edge of the
+ellipse.
 
 Part (a) of Figure `19 <#fig:street_vert>`__ show cell type contour to
 represent the area of effect of the sidewall parameterization in a
@@ -1044,15 +1043,15 @@ velocity fields in a horizontal plane at :math:`z=5\ \si{\meter}`.
    :name: fig:sidewall_horiz
 
    .. figure:: Images/sidewall_z_5_1_init_icell.png
-      :alt:
+      :alt: 
       :width: 10.3cm
 
    .. figure:: Images/sidewall_z_5_1_init_vel.png
-      :alt:
+      :alt: 
       :width: 11cm
 
    .. figure:: Images/sidewall_z_5_1_final.png
-      :alt:
+      :alt: 
       :width: 11cm
 
 In order to turn the algorithm on, the user needs to change the value of
