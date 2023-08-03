@@ -191,7 +191,7 @@ u_{log}(z) = u_{ref}\cdot\frac{ln(z/z_0)}{ln(z_{ref}/z_0)}
 u_{pow}(z) = u_{ref}\cdot(z/z_{ref})^{z_0}
 \end{equation}
 
-\item an urban canopy profile \cite{favaloro2008toward}\cite{pardyjak2008near}:
+\item an urban canopy profile \cite{favaloro2008toward,pardyjak2008near}:
 \begin{equation}
 \label{eq:urban_canopy_low}
 u_{uc}(z)=\begin{cases}
@@ -398,11 +398,11 @@ Figure \ref{fig:canopy} shows velocity magnitude contour with overlaying  veloci
 
 \section{Empirical Parameterizations}
 
-QES-Winds only conserves mass and no momentum equation is solved. As a result, the solution is a potential-flow solution (no shear effects). In order to add shear effects to our solution, empirical parameterizations are needed. These parameterizations are designed using results of experiments and computational simulations (e.g. \cite{singh2008evaluation, brown2013quic}). Buildings are the most important elements in urban areas. There are several parameterizations developed for different areas around the building. This section covers available parameterizations in QES-Winds along with their effects on the wind field.
+QES-Winds only conserves mass and no momentum equation is solved. As a result, the solution is a potential-flow solution (no shear effects). In order to add shear effects to our solution, empirical parameterizations are needed. These parameterizations are designed using results of experiments and computational simulations (e.g. \cite{singh2008evaluation,brown2013quic}). Buildings are the most important elements in urban areas. There are several parameterizations developed for different areas around the building. This section covers available parameterizations in QES-Winds along with their effects on the wind field.
 
 \subsection{Upwind Cavity}
 
-Upwind cavity as described in \cite{nelson20085,bagal2004improved, gowardhan2010evaluation} is the parameterization representing upwind and stagnation effects of the building on the fluid flow. There are three options available for this type of parameterization in QES-Winds. The first option based on the parameterization proposed by R\"{o}ckle \cite{rockle1990bestimmung} and later Kaplan and Dinar \cite{kaplan1996lagrangian}. They defined an ellipsoid to represent what they call is the displacement zone in front of the building. The length of the displacement zone, $L_F$, is defined by Eq. \ref{eq:lf}. The shape of the ellipsoid is estimated by Eq. \ref{eq:upwind}. Finally, the initial velocity components in the displacement zone are set to zero.
+Upwind cavity as described in \cite{nelson20085,bagal2004improved,gowardhan2010evaluation} is the parameterization representing upwind and stagnation effects of the building on the fluid flow. There are three options available for this type of parameterization in QES-Winds. The first option based on the parameterization proposed by R\"{o}ckle \cite{rockle1990bestimmung} and later Kaplan and Dinar \cite{kaplan1996lagrangian}. They defined an ellipsoid to represent what they call is the displacement zone in front of the building. The length of the displacement zone, $L_F$, is defined by Eq. \ref{eq:lf}. The shape of the ellipsoid is estimated by Eq. \ref{eq:upwind}. Finally, the initial velocity components in the displacement zone are set to zero.
 
 \begin{equation}
 \frac{L_{\mathrm{F}}}{H}=\frac{2(W / H)}{1+0.8 W / H}
@@ -565,7 +565,7 @@ In order to choose between these three upwind models, the user needs to change t
 
 \subsection{Leeside Cavity and Far-Wake}
 
-The far-wake and cavity parameterization described in \cite{singh2005testing, singh2006testing} are a significant part of the building parameterizations. The one available in QES-Winds is based on the parameterization proposed by R\"{o}ckle \cite{rockle1990bestimmung} and later Kaplan and Dinar \cite{kaplan1996lagrangian}. The R\"{o}ckle parameterization defines two ellipsoids to represent the shape of the reversed flow cavity and the far-wake region. The reversed flow cavity extends to the along-wind cavity length
+The far-wake and cavity parameterization described in \cite{singh2005testing,singh2006testing} are a significant part of the building parameterizations. The one available in QES-Winds is based on the parameterization proposed by R\"{o}ckle \cite{rockle1990bestimmung} and later Kaplan and Dinar \cite{kaplan1996lagrangian}. The R\"{o}ckle parameterization defines two ellipsoids to represent the shape of the reversed flow cavity and the far-wake region. The reversed flow cavity extends to the along-wind cavity length
 ($L_R$), which is calculated as Eq. \ref{eq:Lr}, and wake is assumed to be approximately $3$ cavity lengths long (i.e., $3L_R$). After calculating $L_R$, the cavity length, $d$ in the stream-wise direction was defined by an ellipsoid shape using Eq. \ref{eq:d}. Finally, the velocity in the reversed cavity zone is defined using Eq. \ref{eq:cavity} and in the wake region, the velocity field is estimated by Eq. \ref{eq:wake}.
 
 \begin{equation}
@@ -710,7 +710,7 @@ To turn on the street canyon parameterization, the user needs to change the valu
 
 \subsection{Rooftop Recirculation}
 
-The rooftop parameterization described in \cite{bagal2004implementation, pol2006implementation}, captures the separation of the flow from the leading edge of the building. It first checks if the incident flow is in $\pm15^{\circ}$ of perpendicular to the front face. The parameterization then creates an ellipsoidal region above the building with height of $H_c$ (height of the vortex, calculated by Eq. \ref{eq:Hc}) and length of $L_c$ (length of the vortex, calculated by Eq. \ref{eq:Lc}). It applies a logarithmic profile in the whole vortex area and finally, reverses the velocity in region $1$. Region $1$ is an ellipsoidal zone with the same length as the vortex and half of the height.
+The rooftop parameterization described in \cite{bagal2004implementation,pol2006implementation}, captures the separation of the flow from the leading edge of the building. It first checks if the incident flow is in $\pm15^{\circ}$ of perpendicular to the front face. The parameterization then creates an ellipsoidal region above the building with height of $H_c$ (height of the vortex, calculated by Eq. \ref{eq:Hc}) and length of $L_c$ (length of the vortex, calculated by Eq. \ref{eq:Lc}). It applies a logarithmic profile in the whole vortex area and finally, reverses the velocity in region $1$. Region $1$ is an ellipsoidal zone with the same length as the vortex and half of the height.
 
 \begin{equation}
 R=B_{\mathrm{s}}^{2 / 3} B_{l}^{1 / 3}

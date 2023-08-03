@@ -305,8 +305,7 @@ type of profile:
       \label{eq:power_law}
       u_{pow}(z) = u_{ref}\cdot(z/z_{ref})^{z_0}
 
-#. an urban canopy profile
-   :cite:`favaloro2008toward`:cite:`pardyjak2008near`:
+#. an urban canopy profile :cite:`favaloro2008toward,pardyjak2008near`:
 
    .. math::
 
@@ -549,21 +548,21 @@ result, the solution is a potential-flow solution (no shear effects). In
 order to add shear effects to our solution, empirical parameterizations
 are needed. These parameterizations are designed using results of
 experiments and computational simulations (e.g.
-:raw-latex:`\cite{singh2008evaluation, brown2013quic}`). Buildings are
-the most important elements in urban areas. There are several
-parameterizations developed for different areas around the building.
-This section covers available parameterizations in QES-Winds along with
-their effects on the wind field.
+:cite:`singh2008evaluation,brown2013quic`). Buildings are the most
+important elements in urban areas. There are several parameterizations
+developed for different areas around the building. This section covers
+available parameterizations in QES-Winds along with their effects on the
+wind field.
 
 Upwind Cavity
 ^^^^^^^^^^^^^
 
 Upwind cavity as described in
-:raw-latex:`\cite{nelson20085,bagal2004improved, gowardhan2010evaluation}`
-is the parameterization representing upwind and stagnation effects of
-the building on the fluid flow. There are three options available for
-this type of parameterization in QES-Winds. The first option based on
-the parameterization proposed by Röckle :cite:`rockle1990bestimmung` and
+:cite:`nelson20085,bagal2004improved,gowardhan2010evaluation` is the
+parameterization representing upwind and stagnation effects of the
+building on the fluid flow. There are three options available for this
+type of parameterization in QES-Winds. The first option based on the
+parameterization proposed by Röckle :cite:`rockle1990bestimmung` and
 later Kaplan and Dinar :cite:`kaplan1996lagrangian`. They defined an
 ellipsoid to represent what they call is the displacement zone in front
 of the building. The length of the displacement zone, :math:`L_F`, is
@@ -737,21 +736,20 @@ Leeside Cavity and Far-Wake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The far-wake and cavity parameterization described in
-:raw-latex:`\cite{singh2005testing, singh2006testing}` are a significant
-part of the building parameterizations. The one available in QES-Winds
-is based on the parameterization proposed by Röckle
-:cite:`rockle1990bestimmung` and later Kaplan and Dinar
-:cite:`kaplan1996lagrangian`. The Röckle parameterization defines two
-ellipsoids to represent the shape of the reversed flow cavity and the
-far-wake region. The reversed flow cavity extends to the along-wind
-cavity length (:math:`L_R`), which is calculated as Eq.
-`[eq:Lr] <#eq:Lr>`__, and wake is assumed to be approximately :math:`3`
-cavity lengths long (i.e., :math:`3L_R`). After calculating :math:`L_R`,
-the cavity length, :math:`d` in the stream-wise direction was defined by
-an ellipsoid shape using Eq. `[eq:d] <#eq:d>`__. Finally, the velocity
-in the reversed cavity zone is defined using Eq.
-`[eq:cavity] <#eq:cavity>`__ and in the wake region, the velocity field
-is estimated by Eq. `[eq:wake] <#eq:wake>`__.
+:cite:`singh2005testing,singh2006testing` are a significant part of the
+building parameterizations. The one available in QES-Winds is based on
+the parameterization proposed by Röckle :cite:`rockle1990bestimmung` and
+later Kaplan and Dinar :cite:`kaplan1996lagrangian`. The Röckle
+parameterization defines two ellipsoids to represent the shape of the
+reversed flow cavity and the far-wake region. The reversed flow cavity
+extends to the along-wind cavity length (:math:`L_R`), which is
+calculated as Eq. `[eq:Lr] <#eq:Lr>`__, and wake is assumed to be
+approximately :math:`3` cavity lengths long (i.e., :math:`3L_R`). After
+calculating :math:`L_R`, the cavity length, :math:`d` in the stream-wise
+direction was defined by an ellipsoid shape using Eq.
+`[eq:d] <#eq:d>`__. Finally, the velocity in the reversed cavity zone is
+defined using Eq. `[eq:cavity] <#eq:cavity>`__ and in the wake region,
+the velocity field is estimated by Eq. `[eq:wake] <#eq:wake>`__.
 
 .. math::
 
@@ -909,17 +907,17 @@ Rooftop Recirculation
 ^^^^^^^^^^^^^^^^^^^^^
 
 The rooftop parameterization described in
-:raw-latex:`\cite{bagal2004implementation, pol2006implementation}`,
-captures the separation of the flow from the leading edge of the
-building. It first checks if the incident flow is in
-:math:`\pm15^{\circ}` of perpendicular to the front face. The
-parameterization then creates an ellipsoidal region above the building
-with height of :math:`H_c` (height of the vortex, calculated by Eq.
-`[eq:Hc] <#eq:Hc>`__) and length of :math:`L_c` (length of the vortex,
-calculated by Eq. `[eq:Lc] <#eq:Lc>`__). It applies a logarithmic
-profile in the whole vortex area and finally, reverses the velocity in
-region :math:`1`. Region :math:`1` is an ellipsoidal zone with the same
-length as the vortex and half of the height.
+:cite:`bagal2004implementation,pol2006implementation`, captures the
+separation of the flow from the leading edge of the building. It first
+checks if the incident flow is in :math:`\pm15^{\circ}` of perpendicular
+to the front face. The parameterization then creates an ellipsoidal
+region above the building with height of :math:`H_c` (height of the
+vortex, calculated by Eq. `[eq:Hc] <#eq:Hc>`__) and length of
+:math:`L_c` (length of the vortex, calculated by Eq.
+`[eq:Lc] <#eq:Lc>`__). It applies a logarithmic profile in the whole
+vortex area and finally, reverses the velocity in region :math:`1`.
+Region :math:`1` is an ellipsoidal zone with the same length as the
+vortex and half of the height.
 
 .. math:: R=B_{\mathrm{s}}^{2 / 3} B_{l}^{1 / 3}
 
