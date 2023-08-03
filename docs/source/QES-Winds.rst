@@ -1,5 +1,5 @@
-QES-Winds: Fast-response Wind Solver
-====================================
+QES-Winds
+=========
 
 Introduction
 ~~~~~~~~~~~~

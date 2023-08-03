@@ -1,5 +1,5 @@
-Building and Running QES-Winds
-==============================
+Installation
+============
 
 This section is designed to serve as a step-by-step instruction of how
 to build and run QES-Winds. In the first part, packages required to
@@ -71,26 +71,3 @@ those packages.
 
 -  A successful build will result in creating the executable named
    ”qesWinds”
-
-Running QES-Winds
------------------
-
-The command to run the QES-Winds executable created above is:
-
-./qesWinds/qesWinds -q [address to XML file] -o [output file] -s [solver
-type] -z [Visualization output]
-
-At least three elements need to be addressed: input XML file, output
-file name and type of solver. The input XML file defines various
-variables necessary for running the code. Input files are usually
-located in ”QES-Winds/data/InputFiles” and defined in command line by
-”-q”.
-
-[address to XML file] = QES-Winds/data/InputFiles/XMLfilename
-
-User can change the name of output file by ”-o” outputname. QES-Winds
-has four solver types: solving on CPU (determined by ”-s 1”), solving
-SOR equation on GPU using dynamic parallelism (determined by ”-s 2”),
-GPU solver using global memory (determined by ”-s 3”) and GPU solver
-using shared memory (determined by ”-s 4”). GPU solvers are much faster
-than CPU solver and are highly recommended especially for large domains.
