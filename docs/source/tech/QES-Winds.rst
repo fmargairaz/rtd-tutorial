@@ -346,80 +346,81 @@ distance from each sensor.
 XML Setup
 ^^^^^^^^^
 
-There are two options available for defining sensor information: 1) the
-user can put all the sensor information in a separate XML file and
-define the address to the location of the sensor file using the
-<sensorName> variable.
+There are two options available for defining sensor information:
 
-.. code:: xml
+#. The user can put all the sensor information in a separate XML file
+   and define the address to the location of the sensor file using the
+   <sensorName> variable.
 
-   <metParams>
-       <z0_domain_flag> 0 </z0_domain_flag>                    <!-- Distribution of surface roughness for domain (0-uniform (default), 1-custom -->
-       <sensorName>../data/InputFiles/sensor.xml</sensorName>  <!-- Name of the sensor file with information for the sensor included -->
-   </metParams>
+   .. code:: xml
 
-) The user can define all information required for creating a sensor by
-using the <sensor> variable inside the <metParams> section of the XML
-file.
+      <metParams>
+          <z0_domain_flag> 0 </z0_domain_flag>                    <!-- Distribution of surface roughness for domain (0-uniform (default), 1-custom -->
+          <sensorName>../data/InputFiles/sensor.xml</sensorName>  <!-- Name of the sensor file with information for the sensor included -->
+      </metParams>
 
-The first part of the sensor information is the location of the sensor
-in domain. There are three options for it: 1) define the location in
-local coordinates of the QES domain.
+#. The user can define all information required for creating a sensor by
+   using the <sensor> variable inside the <metParams> section of the XML
+   file.
 
-.. code:: xml
+   The first part of the sensor information is the location of the
+   sensor in domain. There are three options for it: 1) define the
+   location in local coordinates of the QES domain.
 
-   <metParams>
-       <sensor>
-           <site_coord_flag> 1 </site_coord_flag>          <!-- Sensor site coordinate system (1=QES (default), 2=UTM, 3=Lat/Lon) -->
-         <site_xcoord> 1.0  </site_xcoord>                 <!-- x component of site location in QES domain (m) (if site_coord_flag = 1) -->
-         <site_ycoord> 1.0 </site_ycoord>              <!-- y component of site location in QES domain (m) (if site_coord_flag = 1)-->
-       </sensor>
-   </metParams>
+   .. code:: xml
 
-) The user can define the location in the Universal Transverse Mercator
-(UTM) coordinates. In this case, user also needs to define the origin of
-computational domain in the UTM coordinates.
+      <metParams>
+          <sensor>
+              <site_coord_flag> 1 </site_coord_flag>          <!-- Sensor site coordinate system (1=QES (default), 2=UTM, 3=Lat/Lon) -->
+            <site_xcoord> 1.0  </site_xcoord>                 <!-- x component of site location in QES domain (m) (if site_coord_flag = 1) -->
+            <site_ycoord> 1.0 </site_ycoord>              <!-- y component of site location in QES domain (m) (if site_coord_flag = 1)-->
+          </sensor>
+      </metParams>
 
-.. code:: xml
+#. The user can define the location in the Universal Transverse Mercator
+   (UTM) coordinates. In this case, user also needs to define the origin
+   of computational domain in the UTM coordinates.
 
-   <simulationParameters>
-     <UTMx> 634173 </UTMx>                         <!-- x component (m) of origin in UTM -->
-       <UTMy> 3925360 </UTMy>                      <!-- y component (m) of origin in UTM -->
-       <UTMZone> 14 </UTMZone>                         <!-- UTM zone that domain located -->
-   </simulationParameters>
+   .. code:: xml
 
-.. code:: xml
+      <simulationParameters>
+        <UTMx> 634173 </UTMx>                         <!-- x component (m) of origin in UTM -->
+          <UTMy> 3925360 </UTMy>                      <!-- y component (m) of origin in UTM -->
+          <UTMZone> 14 </UTMZone>                         <!-- UTM zone that domain located -->
+      </simulationParameters>
 
-   <metParams>
-       <sensor>
-           <site_coord_flag> 2 </site_coord_flag>          <!-- Sensor site coordinate system (1=QES (default), 2=UTM, 3=Lat/Lon) -->
-         <site_UTM_x> 634175 </site_UTM_x>                 <!-- x components of site coordinate in UTM (if site_coord_flag = 2) -->
-         <site_UTM_y> 3925362 </site_UTM_y>                <!-- y components of site coordinate in UTM (if site_coord_flag = 2)-->
-         <site_UTM_zone> 14 </site_UTM_zone>               <!-- UTM zone of the sensor site (if site_coord_flag = 2)-->
-       </sensor>
-   </metParams>
+   .. code:: xml
 
-) The user can define the location in Latitude and Longitude
-coordinates. In this case, user also needs to define the origin of
-computational domain in the UTM coordinates.
+      <metParams>
+          <sensor>
+              <site_coord_flag> 2 </site_coord_flag>          <!-- Sensor site coordinate system (1=QES (default), 2=UTM, 3=Lat/Lon) -->
+            <site_UTM_x> 634175 </site_UTM_x>                 <!-- x components of site coordinate in UTM (if site_coord_flag = 2) -->
+            <site_UTM_y> 3925362 </site_UTM_y>                <!-- y components of site coordinate in UTM (if site_coord_flag = 2)-->
+            <site_UTM_zone> 14 </site_UTM_zone>               <!-- UTM zone of the sensor site (if site_coord_flag = 2)-->
+          </sensor>
+      </metParams>
 
-.. code:: xml
+#. The user can define the location in Latitude and Longitude
+   coordinates. In this case, user also needs to define the origin of
+   computational domain in the UTM coordinates.
 
-   <simulationParameters>
-     <UTMx> 634173 </UTMx>                         <!-- x component (m) of origin in UTM -->
-       <UTMy> 3925360 </UTMy>                      <!-- y component (m) of origin in UTM -->
-       <UTMZone> 14 </UTMZone>                         <!-- UTM zone that domain located -->
-   </simulationParameters>
+   .. code:: xml
 
-.. code:: xml
+      <simulationParameters>
+        <UTMx> 634173 </UTMx>                         <!-- x component (m) of origin in UTM -->
+          <UTMy> 3925360 </UTMy>                      <!-- y component (m) of origin in UTM -->
+          <UTMZone> 14 </UTMZone>                         <!-- UTM zone that domain located -->
+      </simulationParameters>
 
-   <metParams>
-       <sensor>
-           <site_coord_flag> 3 </site_coord_flag>          <!-- Sensor site coordinate system (1=QES (default), 2=UTM, 3=Lat/Lon) -->
-         <site_lat> 35.46270 </site_lat>               <!-- x components of site coordinate in Latitude (if site_coord_flag = 3) -->
-         <site_lat> -97.52130 </site_lat>              <!-- y components of site coordinate in Longitude (if site_coord_flag = 3)-->
-       </sensor>
-   </metParams>
+   .. code:: xml
+
+      <metParams>
+          <sensor>
+              <site_coord_flag> 3 </site_coord_flag>          <!-- Sensor site coordinate system (1=QES (default), 2=UTM, 3=Lat/Lon) -->
+            <site_lat> 35.46270 </site_lat>               <!-- x components of site coordinate in Latitude (if site_coord_flag = 3) -->
+            <site_lat> -97.52130 </site_lat>              <!-- y components of site coordinate in Longitude (if site_coord_flag = 3)-->
+          </sensor>
+      </metParams>
 
 The second part of sensor definition is choosing type of profile for
 different time steps, if applicable. The <timeSeries> variable is
