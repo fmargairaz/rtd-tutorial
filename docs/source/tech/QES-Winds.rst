@@ -296,44 +296,42 @@ at a single point or a single velocity profile to initialize the wind
 field. If there is only the wind velocity and direction at a single
 point, the user should specify what type of velocity profile they want
 to build from the measurement. There are three options available for the
-type of profile: 1) a logarithmic profile (Eq.
-`[eq:log_law] <#eq:log_law>`__) :cite:`favaloro2008toward`, 2) a power
-law profile (Eq. `[eq:power_law] <#eq:power_law>`__)
-:cite:`favaloro2008toward` and 3) an urban canopy profile (Eq.
-`[eq:urban_canopy_low] <#eq:urban_canopy_low>`__,
-`[eq:urban_canopy_up] <#eq:urban_canopy_up>`__)
-:raw-latex:`\cite{favaloro2008toward, pardyjak2008near}`.
+type of profile:
 
-.. math::
+#. a logarithmic profile :cite:`favaloro2008toward`:
 
-   \label{eq:log_law}
-   u_{log}(z) = u_{ref}.\frac{ln(z/z_0)}{ln(z_{ref}/z_0)}
+   .. math::
 
-.. math::
+      \label{eq:log_law}
+      u_{log}(z) = u_{ref}\cdot\frac{ln(z/z_0)}{ln(z_{ref}/z_0)}
 
-   \label{eq:power_law}
-   u_{pow}(z) = u_{ref}.(z/z_{ref})^{z_0}
+#. a power law profile :cite:`favaloro2008toward`:
 
-.. math::
+   .. math::
 
-   \label{eq:urban_canopy_low}
-   u_{uc}(z\leq H) = u(H).exp(\alpha(\frac{z}{H}-1))
+      \label{eq:power_law}
+      u_{pow}(z) = u_{ref}\cdot(z/z_{ref})^{z_0}
 
-.. math::
+#. an urban canopy profile
+   :cite:`favaloro2008toward`:cite:`pardyjak2008near`:
 
-   \label{eq:urban_canopy_up}
-   u_{uc}(z > H) = \frac{u_*}{\kappa}.ln(\frac{z-d}{z_0})
+   .. math::
 
-where :math:`u_{ref}` is the measured velocity at measured height
-:math:`z_{ref}`, :math:`z_0` is the surface roughness. The lower portion
-of the urban canopy profile calculated in Eq.
-`[eq:urban_canopy_low] <#eq:urban_canopy_low>`__ where :math:`\alpha` is
-a factor that depends on canopy element density (attenuation
-coefficient) and :math:`u(H)` is the computed velocity at height
-:math:`H`. The upper portion of the urban canopy is a different form of
-a logarithmic profile where :math:`u_*` is the friction velocity,
-:math:`\kappa` is the von Karman constant at  0.4 and :math:`d` is the
-zero plane displacement.
+      \label{eq:urban_canopy_low}
+      u_{uc}(z)=\begin{cases}
+      u(H)\cdot\exp(\alpha(\frac{z}{H}-1)) & \text{if} z\leq H\\
+      u(H)\cdot\exp(\alpha(\frac{z}{H}-1))& \text{if} z > H.
+      \end{cases}
+
+   where :math:`u_{ref}` is the measured velocity at measured height
+   :math:`z_{ref}`, :math:`z_0` is the surface roughness. The lower
+   portion of the urban canopy profile calculated where :math:`\alpha`
+   is a factor that depends on canopy element density (attenuation
+   coefficient) and :math:`u(H)` is the computed velocity at height
+   :math:`H`. The upper portion of the urban canopy is a different form
+   of a logarithmic profile where :math:`u_*` is the friction velocity,
+   :math:`\kappa` is the von Karman constant at  0.4 and :math:`d` is
+   the zero plane displacement.
 
 If there is only one sensor available in the computational domain, the
 code will extend the profile for that sensor uniformly to the whole
