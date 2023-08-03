@@ -175,32 +175,34 @@ can be defined inside a DEM file and only process that part.
    only process that part.
 
 There are two options to determine the location of the origin of QES
-domain inside the DEM borders: 1) Specifying the distance of the QES
-origin with respect to bottom left corner of the DEM file. This can be
-done by setting the value of <originFlag> to :math:`0` and defining
-distances (in meters) in :math:`x` and :math:`y` directions using
-<DEMDistancex> and <DEMDistancey>, respectively.
+domain inside the DEM borders:
 
-.. code:: xml
+#. Specifying the distance of the QES origin with respect to bottom left
+   corner of the DEM file. This can be done by setting the value of
+   <originFlag> to :math:`0` and defining distances (in meters) in
+   :math:`x` and :math:`y` directions using <DEMDistancex> and
+   <DEMDistancey>, respectively.
 
-   <simulationParameters>
-       <originFlag> 0 </originFlag>                    <!-- Origin flag (0- DEM coordinates (default), 1- UTM coordinates) -->
-         <DEMDistancex> 1000.0 </DEMDistancex>                 <!-- x component (m) of origin in DEM coordinates (if originFlag = 0) -->
-         <DEMDistancey> 1000.0 </DEMDistancey>                 <!-- y component (m) of origin in DEM coordinates (if originFlag = 0) -->
-   </simulationParameters>
+   .. code:: xml
 
-) Defining the location of the QES domain origin in the Universal
-Transverse Mercator (UTM) coordinates by setting the value of
-<originFlag> to :math:`1` and determining <UTMx> and <UTMy> of the
-origin in :math:`x` and :math:`y` directions, respectively.
+      <simulationParameters>
+          <originFlag> 0 </originFlag>                    <!-- Origin flag (0- DEM coordinates (default), 1- UTM coordinates) -->
+            <DEMDistancex> 1000.0 </DEMDistancex>                 <!-- x component (m) of origin in DEM coordinates (if originFlag = 0) -->
+            <DEMDistancey> 1000.0 </DEMDistancey>                 <!-- y component (m) of origin in DEM coordinates (if originFlag = 0) -->
+      </simulationParameters>
 
-.. code:: xml
+#. Defining the location of the QES domain origin in the Universal
+   Transverse Mercator (UTM) coordinates by setting the value of
+   <originFlag> to :math:`1` and determining <UTMx> and <UTMy> of the
+   origin in :math:`x` and :math:`y` directions, respectively.
 
-   <simulationParameters>
-       <originFlag> 1 </originFlag>                    <!-- Origin flag (0- DEM coordinates (default), 1- UTM coordinates) -->
-         <UTMx> 595469.6122881 </UTMx>                     <!-- x component (m) of origin in UTM DEM coordinates (if originFlag = 1)-->
-         <UTMy> 6336281.9538635 </UTMy>                    <!-- y component (m) of origin in UTM DEM coordinates (if originFlag = 1)-->
-   </simulationParameters>
+   .. code:: xml
+
+      <simulationParameters>
+          <originFlag> 1 </originFlag>                    <!-- Origin flag (0- DEM coordinates (default), 1- UTM coordinates) -->
+            <UTMx> 595469.6122881 </UTMx>                     <!-- x component (m) of origin in UTM DEM coordinates (if originFlag = 1)-->
+            <UTMy> 6336281.9538635 </UTMy>                    <!-- y component (m) of origin in UTM DEM coordinates (if originFlag = 1)-->
+      </simulationParameters>
 
 Automated City Building
 ^^^^^^^^^^^^^^^^^^^^^^^
