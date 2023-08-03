@@ -212,19 +212,19 @@ provides the capacity to load the ESRI shapefiles using GDAL (Geospatial
 Data Abstraction Library) libraries. After the building footprints and
 heights are loaded from ESRI shapefiles, QES-Winds creates polygon
 buildings and applies appropriate parameterization to them. Figure
-`1 <#fig:okc_qgis>`__ shows an example ESRI shapefile can be read into
-QES-Winds, Central Business District (CBD) of Oklahoma City shapefile,
-subject to JU2003 experimental campaign :cite:`allwine2006joint`,
-plotted using the freely available software QGIS
-(`https://qgis.orgg <https://qgis.org>`__). The cell type contour for
-the Oklahoma City test case in a horizontal plane at
-:math:`z=3\ \si{\metre}` is shown in Figure `2 <#fig:okc_icell>`__. This
-plot indicates the ability of QES-Winds to read in and process ESRI
-shapefiles. The cell type value :math:`0` (blue) represents the building
-cells while value :math:`1` (red) indicates the air cells.
+`[fig:okc_qgis] <#fig:okc_qgis>`__ shows an example ESRI shapefile can
+be read into QES-Winds, Central Business District (CBD) of Oklahoma City
+shapefile, subject to JU2003 experimental campaign
+:cite:`allwine2006joint`, plotted using the freely available software
+QGIS (`https://qgis.orgg <https://qgis.org>`__). The cell type contour
+for the Oklahoma City test case in a horizontal plane at
+:math:`z=3\ \si{\metre}` is shown in Figure
+`[fig:okc_icell] <#fig:okc_icell>`__. This plot indicates the ability of
+QES-Winds to read in and process ESRI shapefiles. The cell type value
+:math:`0` (blue) represents the building cells while value :math:`1`
+(red) indicates the air cells.
 
 .. figure:: Images/OKC.png
-   name: fig:okc_qgis
    :width: 13cm
 
    Central Business District (CBD) of Oklahoma City shapefile, subject
@@ -232,7 +232,6 @@ cells while value :math:`1` (red) indicates the air cells.
    using the freely available software QGIS.
 
 .. figure:: Images/oklahoma_z_3_icell.png
-   name: fig:okc_icell
 
    Cell type contour for the Oklahoma City test case in a horizontal
    plane at :math:`z=3\ \si{\metre}`. The cell type value :math:`0`
@@ -426,123 +425,127 @@ The second part of sensor definition is choosing type of profile for
 different time steps, if applicable. The <timeSeries> variable is
 designed to define type of sensor profile in the sensor section for
 several time steps. There are four options for the input profile in
-QES-Winds: 1) Logarithmic velocity profile, based on Eq.
-`[eq:log_law] <#eq:log_law>`__:
+QES-Winds:
 
-.. code:: xml
+#. Logarithmic velocity profile, based on Eq.
+   `[eq:log_law] <#eq:log_law>`__:
 
-   <metParams>
-       <sensor>
-           <timeSeries>                        <!-- Start of timestep informastion for a sensor -->
-               <boundaryLayerFlag> 1 </boundaryLayerFlag>      <!-- Site boundary layer flag (1-log (default), 2-exp, 3-urban canopy, 4-data entry) -->
-               <siteZ0> 0.1 </siteZ0>                  <!-- Site z0 -->
-               <reciprocal> 0.0 </reciprocal>              <!-- Reciprocal Monin-Obukhov Length (1/m) -->
-               <height> 20.0 </height>                 <!-- Height of the sensor -->
-               <speed> 5.0 </speed>                    <!-- Measured speed at the sensor height -->
-               <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
-            </timeSeries>
-       </sensor>
-   </metParams>
+   .. code:: xml
 
-Figure `[fig:log_profile] <#fig:log_profile>`__ shows velocity magnitude
-contour with overlaying velocity vectors of initial velocity field
-created by the aforementioned example of the logarithmic profile.
+      <metParams>
+          <sensor>
+              <timeSeries>                        <!-- Start of timestep informastion for a sensor -->
+                  <boundaryLayerFlag> 1 </boundaryLayerFlag>      <!-- Site boundary layer flag (1-log (default), 2-exp, 3-urban canopy, 4-data entry) -->
+                  <siteZ0> 0.1 </siteZ0>                  <!-- Site z0 -->
+                  <reciprocal> 0.0 </reciprocal>              <!-- Reciprocal Monin-Obukhov Length (1/m) -->
+                  <height> 20.0 </height>                 <!-- Height of the sensor -->
+                  <speed> 5.0 </speed>                    <!-- Measured speed at the sensor height -->
+                  <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
+               </timeSeries>
+          </sensor>
+      </metParams>
 
-.. figure:: Images/log_y_101.png
+   Figure `[fig:log_profile] <#fig:log_profile>`__ shows velocity
+   magnitude contour with overlaying velocity vectors of initial
+   velocity field created by the aforementioned example of the
+   logarithmic profile.
 
-   Velocity magnitude contour with overlaying velocity vectors in a
-   vertical plane at :math:`y=101\ \si{\meter}` for initial velocity
-   field created by the logarithmic profile.
+   .. figure:: Images/log_y_101.png
 
-) Exponential (power law) velocity profile, based on Eq.
-`[eq:power_law] <#eq:power_law>`__:
+      Velocity magnitude contour with overlaying velocity vectors in a
+      vertical plane at :math:`y=101\ \si{\meter}` for initial velocity
+      field created by the logarithmic profile.
 
-.. code:: xml
+#. Exponential (power law) velocity profile, based on Eq.
+   `[eq:power_law] <#eq:power_law>`__:
 
-   <metParams>
-       <sensor>
-           <timeSeries>                        <!-- Start of timestep informastion for a sensor -->
-               <boundaryLayerFlag> 2 </boundaryLayerFlag>      <!-- Site boundary layer flag (1-log (default), 2-exp, 3-urban canopy, 4-data entry) -->
-               <siteZ0> 0.1 </siteZ0>                  <!-- Site z0 -->
-               <reciprocal> 0.0 </reciprocal>              <!-- Reciprocal Monin-Obukhov Length (1/m) -->
-               <height> 20.0 </height>                 <!-- Height of the sensor -->
-               <speed> 5.0 </speed>                    <!-- Measured speed at the sensor height -->
-               <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
-            </timeSeries>
-       </sensor>
-   </metParams>
+   .. code:: xml
 
-Figure `[fig:exp] <#fig:exp>`__ shows velocity magnitude contour with
-overlaying velocity vectors of the initial velocity field created by the
-aforementioned example of the exponential (power law) profile.
+      <metParams>
+          <sensor>
+              <timeSeries>                        <!-- Start of timestep informastion for a sensor -->
+                  <boundaryLayerFlag> 2 </boundaryLayerFlag>      <!-- Site boundary layer flag (1-log (default), 2-exp, 3-urban canopy, 4-data entry) -->
+                  <siteZ0> 0.1 </siteZ0>                  <!-- Site z0 -->
+                  <reciprocal> 0.0 </reciprocal>              <!-- Reciprocal Monin-Obukhov Length (1/m) -->
+                  <height> 20.0 </height>                 <!-- Height of the sensor -->
+                  <speed> 5.0 </speed>                    <!-- Measured speed at the sensor height -->
+                  <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
+               </timeSeries>
+          </sensor>
+      </metParams>
 
-.. figure:: Images/exp_y_101.png
+   Figure `[fig:exp] <#fig:exp>`__ shows velocity magnitude contour with
+   overlaying velocity vectors of the initial velocity field created by
+   the aforementioned example of the exponential (power law) profile.
 
-   Velocity magnitude contour with overlaying velocity vectors in a
-   vertical plane at :math:`y=101\ \si{\meter}` for initial velocity
-   field created by the exponential (power law) profile.
+   .. figure:: Images/exp_y_101.png
 
-) Urban canopy velocity profile, based on Eq.
-`[eq:urban_canopy_low] <#eq:urban_canopy_low>`__ and
-`[eq:urban_canopy_up] <#eq:urban_canopy_up>`__:
+      Velocity magnitude contour with overlaying velocity vectors in a
+      vertical plane at :math:`y=101\ \si{\meter}` for initial velocity
+      field created by the exponential (power law) profile.
 
-.. code:: xml
+#. Urban canopy velocity profile, based on Eq.
+   `[eq:urban_canopy_low] <#eq:urban_canopy_low>`__ and
+   `[eq:urban_canopy_up] <#eq:urban_canopy_up>`__:
 
-   <metParams>
-       <sensor>
-           <timeSeries>                        <!-- Start of timestep informastion for a sensor -->
-               <boundaryLayerFlag> 3 </boundaryLayerFlag>      <!-- Site boundary layer flag (1-log (default), 2-exp, 3-urban canopy, 4-data entry) -->
-               <siteZ0> 0.1 </siteZ0>                  <!-- Site z0 -->
-               <reciprocal> 0.0 </reciprocal>              <!-- Reciprocal Monin-Obukhov Length (1/m) -->
-               <height> 20.0 </height>                 <!-- Height of the sensor -->
-               <speed> 5.0 </speed>                    <!-- Measured speed at the sensor height -->
-               <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
-                 <canopyHeight> 10.0 </canopyHeight>
-                 <attenuationCoefficient> 1.0 </attenuationCoefficient>
-            </timeSeries>
-       </sensor>
-   </metParams>
+   .. code:: xml
 
-Figure `[fig:canopy] <#fig:canopy>`__ shows velocity magnitude contour
-with overlaying velocity vectors of the initial velocity field created
-by the aforementioned example of the urban canopy profile.
+      <metParams>
+          <sensor>
+              <timeSeries>                        <!-- Start of timestep informastion for a sensor -->
+                  <boundaryLayerFlag> 3 </boundaryLayerFlag>      <!-- Site boundary layer flag (1-log (default), 2-exp, 3-urban canopy, 4-data entry) -->
+                  <siteZ0> 0.1 </siteZ0>                  <!-- Site z0 -->
+                  <reciprocal> 0.0 </reciprocal>              <!-- Reciprocal Monin-Obukhov Length (1/m) -->
+                  <height> 20.0 </height>                 <!-- Height of the sensor -->
+                  <speed> 5.0 </speed>                    <!-- Measured speed at the sensor height -->
+                  <direction> 270.0 </direction>              <!-- Wind direction of sensor -->
+                    <canopyHeight> 10.0 </canopyHeight>
+                    <attenuationCoefficient> 1.0 </attenuationCoefficient>
+               </timeSeries>
+          </sensor>
+      </metParams>
 
-.. figure:: Images/canopy_y_101.png
+   Figure `[fig:canopy] <#fig:canopy>`__ shows velocity magnitude
+   contour with overlaying velocity vectors of the initial velocity
+   field created by the aforementioned example of the urban canopy
+   profile.
 
-   Velocity magnitude contour with overlaying velocity vectors in a
-   vertical plane at :math:`y=101\ \si{\meter}` for initial velocity
-   field created by the urban canopy profile.
+   .. figure:: Images/canopy_y_101.png
 
-) Data entry of the profile from an experimental tower with multiple
-sensors or from a numerical mesoscale weather prediction model like WRF
-:cite:`powers2017weather`:
+      Velocity magnitude contour with overlaying velocity vectors in a
+      vertical plane at :math:`y=101\ \si{\meter}` for initial velocity
+      field created by the urban canopy profile.
 
-.. code:: xml
+#. Data entry of the profile from an experimental tower with multiple
+   sensors or from a numerical mesoscale weather prediction model like
+   WRF :cite:`powers2017weather`:
 
-   <metParams>
-       <sensor>
-           <timeSeries>                        <!-- Start of timestep informastion for a sensor -->
-               <boundaryLayerFlag> 4 </boundaryLayerFlag>          <!-- Site boundary layer flag (1-log, 2-exp, 3-urban canopy, 4-data entry) -->
-             <siteZ0> 0.1 </siteZ0>                                    <!-- Site z0 -->
-             <reciprocal> 0.0 </reciprocal>                        <!-- Reciprocal Monin-Obukhov Length (1/m) -->
-             <height> 30.7015 </height>                            <!-- Height of the sensor -->
-             <height> 74.4169 </height>
-             <height> 144.644 </height>
-             <height> 197.455 </height>
-             <height> 268.468 </height>
-             <speed> 2.56922 </speed>                          <!-- Measured speed at the sensor height -->
-             <speed> 2.55532 </speed>
-             <speed> 2.33319 </speed>
-             <speed> 2.16058 </speed>
-             <speed> 1.98843 </speed>
-             <direction> 323.283 </direction>                  <!-- Wind direction of sensor -->
-             <direction> 327.377 </direction>
-             <direction> 332.676 </direction>
-             <direction> 337.649 </direction>
-             <direction> 344.273 </direction>
-           </timeSeries>
-       </sensor>
-   </metParams>
+   .. code:: xml
+
+      <metParams>
+          <sensor>
+              <timeSeries>                        <!-- Start of timestep informastion for a sensor -->
+                  <boundaryLayerFlag> 4 </boundaryLayerFlag>          <!-- Site boundary layer flag (1-log, 2-exp, 3-urban canopy, 4-data entry) -->
+                <siteZ0> 0.1 </siteZ0>                                    <!-- Site z0 -->
+                <reciprocal> 0.0 </reciprocal>                        <!-- Reciprocal Monin-Obukhov Length (1/m) -->
+                <height> 30.7015 </height>                            <!-- Height of the sensor -->
+                <height> 74.4169 </height>
+                <height> 144.644 </height>
+                <height> 197.455 </height>
+                <height> 268.468 </height>
+                <speed> 2.56922 </speed>                          <!-- Measured speed at the sensor height -->
+                <speed> 2.55532 </speed>
+                <speed> 2.33319 </speed>
+                <speed> 2.16058 </speed>
+                <speed> 1.98843 </speed>
+                <direction> 323.283 </direction>                  <!-- Wind direction of sensor -->
+                <direction> 327.377 </direction>
+                <direction> 332.676 </direction>
+                <direction> 337.649 </direction>
+                <direction> 344.273 </direction>
+              </timeSeries>
+          </sensor>
+      </metParams>
 
 Empirical Parameterizations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
