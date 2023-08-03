@@ -19,6 +19,12 @@ Fabien Margairaz |test|
 .. |test| image:: https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png
    :target: https://orcid.org/0000-0003-0208-3455
 
+Rob Stoll |test|
+
+.. |test| image:: https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png
+   :target: https://orcid.org/0000-0002-4777-6944
+
+
 .. note::
 
    This project is under active development.
