@@ -157,7 +157,7 @@ The user can define the address to the shapefile using <SHP> variable as well as
 \subsection{Import Building From XML}
 \label{sec:building}
 
-Instead of reading in a ESRI shapefile, the user can import building information manually through the XML file. This can be done by using the <buildings> section of the XML file. The only option available for now is the rectangular building. Information required for defining a rectangular building are height, base height, length, width, location of the closest corner to the origin of domain and building rotational angle. Following is an example of a rectangular building with $40$ m as height, $0\sim as base height, $20$ m as length and width, closest corner to the origin located at $90$ m in $x$ and $y$ directions, and $0$ {\degree}$ as rotation angle with respect to the North-South line. Also, $0.1$ m is defined as the surface roughness for all the building walls.
+Instead of reading in a ESRI shapefile, the user can import building information manually through the XML file. This can be done by using the <buildings> section of the XML file. The only option available for now is the rectangular building. Information required for defining a rectangular building are height, base height, length, width, location of the closest corner to the origin of domain and building rotational angle. Following is an example of a rectangular building with $40$ m as height, $0$ m as base height, $20$ m as length and width, closest corner to the origin located at $90$ m in $x$ and $y$ directions, and $0^{\circ}$ as rotation angle with respect to the North-South line. Also, $0.1$ m is defined as the surface roughness for all the building walls.
 
 \begin{lstlisting}[language=XML]
 <buildings>
@@ -658,7 +658,7 @@ where $S$ is the spacing between two buildings and $x_{can}$ is the distance fro
 
 In order to identify the criteria to determine the existence of a street canyon, Singh et al. \cite{singh2008evaluation} utilized the cavity length, $L_R$ (Eq. \ref{eq:Lr}), for the upwind building. If $S \textless L_R$, the street canyon parameterization is applied, otherwise, the upwind building is considered as an isolated building.
 
-Part (a) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} show cell type contour to represent the area of effect of the street canyon parameterization in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively. The street canyon parameterization is applied to an area between two rectangular buildings. The upwind building is same as the one defined in Section \ref{sec:building}. The downwind building is a rectangular building with $20$ m as height, $0$ m as base height, $20$ m as length and width, closest corner to the origin located at $90$ m in $x$ and $120$ m in $y$ directions, and $0\si{\degree}$ as rotation angle with respect to the North-South line. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively.
+Part (a) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} show cell type contour to represent the area of effect of the street canyon parameterization in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively. The street canyon parameterization is applied to an area between two rectangular buildings. The upwind building is same as the one defined in Section \ref{sec:building}. The downwind building is a rectangular building with $20$ m as height, $0$ m as base height, $20$ m as length and width, closest corner to the origin located at $90$ m in $x$ and $120$ m in $y$ directions, and $0^{\circ}$ as rotation angle with respect to the North-South line. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively.
 
 \begin{figure}[H]
     \centering
@@ -710,7 +710,7 @@ To turn on the street canyon parameterization, the user needs to change the valu
 
 \subsection{Rooftop Recirculation}
 
-The rooftop parameterization described in \cite{bagal2004implementation, pol2006implementation}, captures the separation of the flow from the leading edge of the building. It first checks if the incident flow is in $\pm15\degree$ of perpendicular to the front face. The parameterization then creates an ellipsoidal region above the building with height of $H_c$ (height of the vortex, calculated by Eq. \ref{eq:Hc}) and length of $L_c$ (length of the vortex, calculated by Eq. \ref{eq:Lc}). It applies a logarithmic profile in the whole vortex area and finally, reverses the velocity in region $1$. Region $1$ is an ellipsoidal zone with the same length as the vortex and half of the height.
+The rooftop parameterization described in \cite{bagal2004implementation, pol2006implementation}, captures the separation of the flow from the leading edge of the building. It first checks if the incident flow is in $\pm15^{\circ}$ of perpendicular to the front face. The parameterization then creates an ellipsoidal region above the building with height of $H_c$ (height of the vortex, calculated by Eq. \ref{eq:Hc}) and length of $L_c$ (length of the vortex, calculated by Eq. \ref{eq:Lc}). It applies a logarithmic profile in the whole vortex area and finally, reverses the velocity in region $1$. Region $1$ is an ellipsoidal zone with the same length as the vortex and half of the height.
 
 \begin{equation}
 R=B_{\mathrm{s}}^{2 / 3} B_{l}^{1 / 3}
@@ -729,7 +729,7 @@ H_{\mathrm{c}}=0.22 R
 where $B_s$ is the smaller of the height ($H$) and the effective width ($W_{eff}$) of the
 building, $B_l$ is the larger of $H$ and $W_{eff}$ , $R$ is the vortex size scaling factor.
 
-Part (a) of Figure \ref{fig:street_vert} show cell type contour to represent the area of effect of the rooftop parameterization in a vertical plane at $y=100$ m. The rooftop parameterization is applied to a rectangular building with $40$ m as height, $0$ m as base height, $40$ m as length and width, closest corner to the origin located at $90$ m in $x$ and $y$ directions, and $0\si{\degree}$ as rotation angle with respect to the North-South line. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:street_vert} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m.
+Part (a) of Figure \ref{fig:street_vert} show cell type contour to represent the area of effect of the rooftop parameterization in a vertical plane at $y=100$ m. The rooftop parameterization is applied to a rectangular building with $40$ m as height, $0$ m as base height, $40$ m as length and width, closest corner to the origin located at $90$ m in $x$ and $y$ directions, and $0^{\circ}$ as rotation angle with respect to the North-South line. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:street_vert} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m.
 
 \begin{figure}[H]
     \centering
@@ -761,7 +761,7 @@ To turn the parameterization on, the user needs to change the value of "rooftopF
 
 \subsection{Sidewall Recirculation Zone}
 
-The sidewall parameterization is designed to represent the effects of the edge of the building on the upwind field \cite{hayati2017comprehensive}. It first checks if a face has an outward normal vector nominally ($\pm 10\degree$)
+The sidewall parameterization is designed to represent the effects of the edge of the building on the upwind field \cite{hayati2017comprehensive}. It first checks if a face has an outward normal vector nominally ($\pm 10^{\circ}$)
 perpendicular to the local wind vector. The important parameters controlling the sidewall vortex strength and geometry are:
 
 \begin{equation}
