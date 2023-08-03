@@ -39,10 +39,8 @@ XML Example
 
 The domain information (number of cells and cell size) are defined under
 the <simulationParameters> part of the XML file. Following is an example
-of a domain with :math:`2\ \si{\kilo\metre}` by
-:math:`2\ \si{\kilo\metre}` by :math:`200\ \si{\metre}` and resolution
-of :math:`2\ \si{\metre}` by :math:`2\ \si{\metre}` by
-:math:`2\ \si{\metre}`:
+of a domain with :math:`2` km by :math:`2` km by :math:`200` m and
+resolution of :math:`2` m by :math:`2` m by :math:`2` m:
 
 .. code:: xml
 
@@ -131,16 +129,14 @@ in Scotland where field experiments have been conducted and data for
 testing and evaluation exists
 (:cite:`taylor1987askervein,mickle1988askervein`). The simulation with
 Askervein Hill was run without any complex terrain flow
-parameterizations. The Askervein Hill dataset is
-:math:`6023.43\ \si{\metre}` by :math:`6023.43\ \si{\metre}`. The hill
-height is approximately :math:`124\ \si{\metre}` tall. Figure
-`[fig:askervein] <#fig:askervein>`__ indicates the cell type contour for
-the Askervin hill test case in a vertical plane at
-:math:`y = 3000\ \si{\metre}` (part (a)), and a horizontal plane at
-:math:`z=20\ \si{\metre}` (part (b)). These plots show the ability of
-QES-Winds to read in and process DEM files. The cell type value
-:math:`1` (blue) represents the air cells while value :math:`2` (red)
-indicates the terrain cells.
+parameterizations. The Askervein Hill dataset is :math:`6023.43` m by
+:math:`6023.43` m. The hill height is approximately :math:`124` m tall.
+Figure `[fig:askervein] <#fig:askervein>`__ indicates the cell type
+contour for the Askervin hill test case in a vertical plane at
+:math:`y = 3000` m (part (a)), and a horizontal plane at :math:`z=20` m
+(part (b)). These plots show the ability of QES-Winds to read in and
+process DEM files. The cell type value :math:`1` (blue) represents the
+air cells while value :math:`2` (red) indicates the terrain cells.
 
 .. container:: float
 
@@ -217,12 +213,11 @@ be read into QES-Winds, Central Business District (CBD) of Oklahoma City
 shapefile, subject to JU2003 experimental campaign
 :cite:`allwine2006joint`, plotted using the freely available software
 QGIS (`https://qgis.orgg <https://qgis.org>`__). The cell type contour
-for the Oklahoma City test case in a horizontal plane at
-:math:`z=3\ \si{\metre}` is shown in Figure
-`[fig:okc_icell] <#fig:okc_icell>`__. This plot indicates the ability of
-QES-Winds to read in and process ESRI shapefiles. The cell type value
-:math:`0` (blue) represents the building cells while value :math:`1`
-(red) indicates the air cells.
+for the Oklahoma City test case in a horizontal plane at :math:`z=3` m
+is shown in Figure `[fig:okc_icell] <#fig:okc_icell>`__. This plot
+indicates the ability of QES-Winds to read in and process ESRI
+shapefiles. The cell type value :math:`0` (blue) represents the building
+cells while value :math:`1` (red) indicates the air cells.
 
 .. figure:: Images/OKC.png
    :width: 13cm
@@ -234,9 +229,9 @@ QES-Winds to read in and process ESRI shapefiles. The cell type value
 .. figure:: Images/oklahoma_z_3_icell.png
 
    Cell type contour for the Oklahoma City test case in a horizontal
-   plane at :math:`z=3\ \si{\metre}`. The cell type value :math:`0`
-   (blue) represents the building cells while value :math:`1` (red)
-   indicates the air cells.
+   plane at :math:`z=3` m. The cell type value :math:`0` (blue)
+   represents the building cells while value :math:`1` (red) indicates
+   the air cells.
 
 The user can define the address to the shapefile using <SHP> variable as
 well as the name of the shapefile using the <SHPBuildingLayer> and the
@@ -263,13 +258,12 @@ information manually through the XML file. This can be done by using the
 is the rectangular building. Information required for defining a
 rectangular building are height, base height, length, width, location of
 the closest corner to the origin of domain and building rotational
-angle. Following is an example of a rectangular building with
-:math:`40\ \si{\metre}` as height, :math:`0\si{\metre}` as base height,
-:math:`20\ \si{\metre}` as length and width, closest corner to the
-origin located at :math:`90\ \si{\metre}` in :math:`x` and :math:`y`
-directions, and :math:`0\ \si{\degree}` as rotation angle with respect
-to the North-South line. Also, :math:`0.1\ \si{\metre}` is defined as
-the surface roughness for all the building walls.
+angle. Following is an example of a rectangular building with :math:`40`
+m as height,
+:math:`0\sim as base height,`\ 20\ :math:`m as length and width, closest corner to the origin located at`\ 90\ :math:`m in`\ x\ :math:`and`\ y\ :math:`directions, and`\ 0\ :math:`{\degree}`
+as rotation angle with respect to the North-South line. Also,
+:math:`0.1` m is defined as the surface roughness for all the building
+walls.
 
 .. code:: xml
 
@@ -453,8 +447,8 @@ QES-Winds:
    .. figure:: Images/log_y_101.png
 
       Velocity magnitude contour with overlaying velocity vectors in a
-      vertical plane at :math:`y=101\ \si{\meter}` for initial velocity
-      field created by the logarithmic profile.
+      vertical plane at :math:`y=101` m for initial velocity field
+      created by the logarithmic profile.
 
 #. Exponential (power law) velocity profile, based on Eq.
    `[eq:power_law] <#eq:power_law>`__:
@@ -481,8 +475,8 @@ QES-Winds:
    .. figure:: Images/exp_y_101.png
 
       Velocity magnitude contour with overlaying velocity vectors in a
-      vertical plane at :math:`y=101\ \si{\meter}` for initial velocity
-      field created by the exponential (power law) profile.
+      vertical plane at :math:`y=101` m for initial velocity field
+      created by the exponential (power law) profile.
 
 #. Urban canopy velocity profile, based on Eq.
    `[eq:urban_canopy_low] <#eq:urban_canopy_low>`__ and
@@ -513,8 +507,8 @@ QES-Winds:
    .. figure:: Images/canopy_y_101.png
 
       Velocity magnitude contour with overlaying velocity vectors in a
-      vertical plane at :math:`y=101\ \si{\meter}` for initial velocity
-      field created by the urban canopy profile.
+      vertical plane at :math:`y=101` m for initial velocity field
+      created by the urban canopy profile.
 
 #. Data entry of the profile from an experimental tower with multiple
    sensors or from a numerical mesoscale weather prediction model like
@@ -593,18 +587,17 @@ the building, receptively.
 Part (a) of Figure `[fig:upwind_1_vert] <#fig:upwind_1_vert>`__ and
 Figure `[fig:upwind_1_horiz] <#fig:upwind_1_horiz>`__ show cell type
 contour to represent the area of effect of the Röckle upwind cavity
-parameterization in a vertical plane at :math:`y=100\ \si{\meter}` and a
-horizontal plane at :math:`z=5\ \si{\meter}`, respectively. The upwind
-parameterizations is applied to a rectangular building defined in
-Section `4.3 <#sec:building>`__. The initial guess field is constructed
-using a single sensor with logarithmic profile as defined in
+parameterization in a vertical plane at :math:`y=100` m and a horizontal
+plane at :math:`z=5` m, respectively. The upwind parameterizations is
+applied to a rectangular building defined in Section
+`4.3 <#sec:building>`__. The initial guess field is constructed using a
+single sensor with logarithmic profile as defined in
 `5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
 `[fig:upwind_1_vert] <#fig:upwind_1_vert>`__ and Figure
 `[fig:upwind_1_horiz] <#fig:upwind_1_horiz>`__ indicate velocity
 magnitude contour with overlaying velocity vectors of initial (part (b))
-and final (part(c)) velocity fields in a vertical plane at
-:math:`y=100\ \si{\meter}` and a horizontal plane at
-:math:`z=5\ \si{\meter}`, respectively.
+and final (part(c)) velocity fields in a vertical plane at :math:`y=100`
+m and a horizontal plane at :math:`z=5` m, respectively.
 
 .. container:: float
 
@@ -649,18 +642,17 @@ the building, receptively.
 Part (a) of Figure `[fig:upwind_1_vert] <#fig:upwind_1_vert>`__ and
 Figure `[fig:upwind_1_horiz] <#fig:upwind_1_horiz>`__ show cell type
 contour to represent the area of effect of the MVP upwind cavity
-parameterization in a vertical plane at :math:`y=100\ \si{\meter}` and a
-horizontal plane at :math:`z=5\ \si{\meter}`, respectively. The upwind
-parameterizations is applied to a rectangular building defined in
-Section `4.3 <#sec:building>`__. The initial guess field is constructed
-using a single sensor with logarithmic profile as defined in
+parameterization in a vertical plane at :math:`y=100` m and a horizontal
+plane at :math:`z=5` m, respectively. The upwind parameterizations is
+applied to a rectangular building defined in Section
+`4.3 <#sec:building>`__. The initial guess field is constructed using a
+single sensor with logarithmic profile as defined in
 `5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
 `[fig:upwind_1_vert] <#fig:upwind_1_vert>`__ and Figure
 `[fig:upwind_1_horiz] <#fig:upwind_1_horiz>`__ indicate velocity
 magnitude contour with overlaying velocity vectors of initial (part (b))
-and final (part(c)) velocity fields in a vertical plane at
-:math:`y=100\ \si{\meter}` and a horizontal plane at
-:math:`z=5\ \si{\meter}`, respectively.
+and final (part(c)) velocity fields in a vertical plane at :math:`y=100`
+m and a horizontal plane at :math:`z=5` m, respectively.
 
 .. container:: float
 
@@ -698,18 +690,17 @@ on the inner region.
 Part (a) of Figure `[fig:upwind_1_vert] <#fig:upwind_1_vert>`__ and
 Figure `[fig:upwind_1_horiz] <#fig:upwind_1_horiz>`__ show cell type
 contour to represent the area of effect of the HMVP upwind cavity
-parameterization in a vertical plane at :math:`y=100\ \si{\meter}` and a
-horizontal plane at :math:`z=5\ \si{\meter}`, respectively. The upwind
-parameterization is applied to a rectangular building defined in Section
+parameterization in a vertical plane at :math:`y=100` m and a horizontal
+plane at :math:`z=5` m, respectively. The upwind parameterization is
+applied to a rectangular building defined in Section
 `4.3 <#sec:building>`__. The initial guess field is constructed using a
 single sensor with logarithmic profile as defined in
 `5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
 `[fig:upwind_1_vert] <#fig:upwind_1_vert>`__ and Figure
 `[fig:upwind_1_horiz] <#fig:upwind_1_horiz>`__ indicate velocity
 magnitude contour with overlaying velocity vectors of initial (part (b))
-and final (part(c)) velocity fields in a vertical plane at
-:math:`y=100\ \si{\meter}` and a horizontal plane at
-:math:`z=5\ \si{\meter}`, respectively.
+and final (part(c)) velocity fields in a vertical plane at :math:`y=100`
+m and a horizontal plane at :math:`z=5` m, respectively.
 
 .. container:: float
 
@@ -791,18 +782,16 @@ stream-wise direction.
 Part (a) of Figure `[fig:wake_vert] <#fig:wake_vert>`__ and Figure
 `[fig:wake_horiz] <#fig:wake_horiz>`__ show cell type contour to
 represent the area of effect of the Röckle wake parameterization in a
-vertical plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
-:math:`z=5\ \si{\meter}`, respectively. The wake parameterization is
-applied to a rectangular building defined in Section
-`4.3 <#sec:building>`__. The initial guess field is constructed using a
-single sensor with logarithmic profile as defined in
-`5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
+vertical plane at :math:`y=100` m and a horizontal plane at :math:`z=5`
+m, respectively. The wake parameterization is applied to a rectangular
+building defined in Section `4.3 <#sec:building>`__. The initial guess
+field is constructed using a single sensor with logarithmic profile as
+defined in `5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
 `[fig:wake_vert] <#fig:wake_vert>`__ and Figure
 `[fig:wake_horiz] <#fig:wake_horiz>`__ indicate velocity magnitude
 contour with overlaying velocity vectors of initial (part (b)) and final
-(part(c)) velocity fields in a vertical plane at
-:math:`y=100\ \si{\meter}` and a horizontal plane at
-:math:`z=5\ \si{\meter}`, respectively.
+(part(c)) velocity fields in a vertical plane at :math:`y=100` m and a
+horizontal plane at :math:`z=5` m, respectively.
 
 .. container:: float
 
@@ -868,24 +857,22 @@ building.
 Part (a) of Figure `[fig:street_vert] <#fig:street_vert>`__ and Figure
 `[fig:street_horiz] <#fig:street_horiz>`__ show cell type contour to
 represent the area of effect of the street canyon parameterization in a
-vertical plane at :math:`y=100\ \si{\meter}` and a horizontal plane at
-:math:`z=5\ \si{\meter}`, respectively. The street canyon
-parameterization is applied to an area between two rectangular
-buildings. The upwind building is same as the one defined in Section
-`4.3 <#sec:building>`__. The downwind building is a rectangular building
-with :math:`20\ \si{\metre}` as height, :math:`0\ \si{\metre}` as base
-height, :math:`20\ \si{\metre}` as length and width, closest corner to
-the origin located at :math:`90\ \si{\metre}` in :math:`x` and
-:math:`120\ \si{\metre}` in :math:`y` directions, and
-:math:`0\si{\degree}` as rotation angle with respect to the North-South
-line. The initial guess field is constructed using a single sensor with
-logarithmic profile as defined in `5.1 <#sec:sensor_xml>`__. Parts (b)
-and (c) of Figure `[fig:street_vert] <#fig:street_vert>`__ and Figure
+vertical plane at :math:`y=100` m and a horizontal plane at :math:`z=5`
+m, respectively. The street canyon parameterization is applied to an
+area between two rectangular buildings. The upwind building is same as
+the one defined in Section `4.3 <#sec:building>`__. The downwind
+building is a rectangular building with :math:`20` m as height,
+:math:`0` m as base height, :math:`20` m as length and width, closest
+corner to the origin located at :math:`90` m in :math:`x` and
+:math:`120` m in :math:`y` directions, and :math:`0\si{\degree}` as
+rotation angle with respect to the North-South line. The initial guess
+field is constructed using a single sensor with logarithmic profile as
+defined in `5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
+`[fig:street_vert] <#fig:street_vert>`__ and Figure
 `[fig:street_horiz] <#fig:street_horiz>`__ indicate velocity magnitude
 contour with overlaying velocity vectors of initial (part (b)) and final
-(part(c)) velocity fields in a vertical plane at
-:math:`y=100\ \si{\meter}` and a horizontal plane at
-:math:`z=5\ \si{\meter}`, respectively.
+(part(c)) velocity fields in a vertical plane at :math:`y=100` m and a
+horizontal plane at :math:`z=5` m, respectively.
 
 .. container:: float
 
@@ -953,19 +940,17 @@ scaling factor.
 
 Part (a) of Figure `[fig:street_vert] <#fig:street_vert>`__ show cell
 type contour to represent the area of effect of the rooftop
-parameterization in a vertical plane at :math:`y=100\ \si{\meter}`. The
-rooftop parameterization is applied to a rectangular building with
-:math:`40\ \si{\metre}` as height, :math:`0\ \si{\metre}` as base
-height, :math:`40\ \si{\metre}` as length and width, closest corner to
-the origin located at :math:`90\ \si{\metre}` in :math:`x` and :math:`y`
-directions, and :math:`0\si{\degree}` as rotation angle with respect to
-the North-South line. The initial guess field is constructed using a
-single sensor with logarithmic profile as defined in
+parameterization in a vertical plane at :math:`y=100` m. The rooftop
+parameterization is applied to a rectangular building with :math:`40` m
+as height, :math:`0` m as base height, :math:`40` m as length and width,
+closest corner to the origin located at :math:`90` m in :math:`x` and
+:math:`y` directions, and :math:`0\si{\degree}` as rotation angle with
+respect to the North-South line. The initial guess field is constructed
+using a single sensor with logarithmic profile as defined in
 `5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
 `[fig:street_vert] <#fig:street_vert>`__ indicate velocity magnitude
 contour with overlaying velocity vectors of initial (part (b)) and final
-(part(c)) velocity fields in a vertical plane at
-:math:`y=100\ \si{\meter}`.
+(part(c)) velocity fields in a vertical plane at :math:`y=100` m.
 
 .. container:: float
 
@@ -1015,15 +1000,15 @@ ellipse.
 
 Part (a) of Figure `[fig:street_vert] <#fig:street_vert>`__ show cell
 type contour to represent the area of effect of the sidewall
-parameterization in a horizontal plane at :math:`z=5\ \si{\meter}`. The
-rooftop parameterization is applied to a rectangular building defined in
-Section `4.3 <#sec:building>`__. The initial guess field is constructed
-using a single sensor with logarithmic profile as defined in
+parameterization in a horizontal plane at :math:`z=5` m. The rooftop
+parameterization is applied to a rectangular building defined in Section
+`4.3 <#sec:building>`__. The initial guess field is constructed using a
+single sensor with logarithmic profile as defined in
 `5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
 `[fig:sidewall_horiz] <#fig:sidewall_horiz>`__ indicate velocity
 magnitude contour with overlaying velocity vectors of initial (part (b))
-and final (part(c)) velocity fields in a horizontal plane at
-:math:`z=5\ \si{\meter}`.
+and final (part(c)) velocity fields in a horizontal plane at :math:`z=5`
+m.
 
 .. container:: float
 

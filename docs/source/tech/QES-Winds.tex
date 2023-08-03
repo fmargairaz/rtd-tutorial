@@ -24,7 +24,7 @@ The first step in every computational code or package is to define the computati
 
 \subsection{XML Example}
 
-The domain information (number of cells and cell size) are defined under the <simulationParameters> part of the XML file. Following is an example of a domain with $2\ \si{\kilo\metre}$ by $2\ \si{\kilo\metre}$ by $200\ \si{\metre}$ and resolution of $2\ \si{\metre}$ by $2\ \si{\metre}$ by $2\ \si{\metre}$:
+The domain information (number of cells and cell size) are defined under the <simulationParameters> part of the XML file. Following is an example of a domain with $2$ km by $2$ km by $200$ m and resolution of $2$ m by $2$ m by $2$ m:
 
 \begin{lstlisting}[language=XML]
 <simulationParameters>
@@ -69,7 +69,7 @@ The current version of QES-Winds has been written to allow commonly available te
 
 Using the Geospatial Data Abstraction Library (GDAL; \href{https://www.gdal.org}{https://www.gdal.org}), we are able to load geo-referenced datasets of terrain so that the simulations can include the effects of hills, valleys, and mountains. In the current version of the code, we can load Digital Elevation Model (DEM) files for different physical locations.
 
-Using the Digital Elevation Model (DEM) file loaders in our code base, we have loaded and tested multiple different terrain data sets. As a first test, we loaded a DEM of Askervein Hill. This is an isolated hill in Scotland where field experiments have been conducted and data for testing and evaluation exists (\cite{taylor1987askervein,mickle1988askervein}). The simulation with Askervein Hill was run without any complex terrain flow parameterizations. The Askervein Hill dataset is $6023.43\ \si{\metre}$ by $6023.43\ \si{\metre}$. The hill height is approximately $124\ \si{\metre}$ tall. Figure \ref{fig:askervein} indicates the cell type contour for the Askervin hill test case in a vertical plane at $y = 3000\ \si{\metre}$ (part (a)), and a horizontal plane at $z=20\ \si{\metre}$ (part (b)). These plots show the ability of QES-Winds to read in and process DEM files. The cell type value $1$ (blue) represents the air cells while value $2$ (red) indicates the terrain cells.
+Using the Digital Elevation Model (DEM) file loaders in our code base, we have loaded and tested multiple different terrain data sets. As a first test, we loaded a DEM of Askervein Hill. This is an isolated hill in Scotland where field experiments have been conducted and data for testing and evaluation exists (\cite{taylor1987askervein,mickle1988askervein}). The simulation with Askervein Hill was run without any complex terrain flow parameterizations. The Askervein Hill dataset is $6023.43$ m by $6023.43$ m. The hill height is approximately $124$ m tall. Figure \ref{fig:askervein} indicates the cell type contour for the Askervin hill test case in a vertical plane at $y = 3000$ m (part (a)), and a horizontal plane at $z=20$ m (part (b)). These plots show the ability of QES-Winds to read in and process DEM files. The cell type value $1$ (blue) represents the air cells while value $2$ (red) indicates the terrain cells.
 
 \begin{figure}[H]
     \begin{subfigure}{\textwidth}
@@ -82,7 +82,7 @@ Using the Digital Elevation Model (DEM) file loaders in our code base, we have l
     \includegraphics[width=13.0cm,keepaspectratio]{Images/askervein_z_20_icell.png}
     \caption{}
     \end{subfigure}
-    \caption{Cell type contour for the Askervin hill test case in a (a) vertical plane at $y=3000\ \si{\meter}$, (b) horizontal plane at $z=20\ \si{\meter}$. The cell type value $1$ (blue) represents the air cells while value $2$ (red) indicates the terrain cells.}
+    \caption{Cell type contour for the Askervin hill test case in a (a) vertical plane at $y=3000$ m, (b) horizontal plane at $z=20$ m. The cell type value $1$ (blue) represents the air cells while value $2$ (red) indicates the terrain cells.}
 \end{figure}
 
 The user can define the address to the DEM using <DEM> variable under the <simulationParameters> part in the XML file:
@@ -130,7 +130,7 @@ There are two options to determine the location of the origin of QES domain insi
 
 \subsection{Automated City Building}
 
-A new shapefile reader function has been added to QES-Winds, which provides the capacity to load the ESRI shapefiles using GDAL (Geospatial Data Abstraction Library) libraries. After the building footprints and heights are loaded from ESRI shapefiles, QES-Winds creates polygon buildings and applies appropriate parameterization to them. Figure \ref{fig:okc_qgis} shows an example ESRI shapefile can be read into QES-Winds, Central Business District (CBD) of Oklahoma City shapefile, subject to JU2003 experimental campaign \cite{allwine2006joint}, plotted using the freely available software QGIS (\href{https://qgis.org}{https://qgis.orgg}). The cell type contour for the Oklahoma City test case in a horizontal plane at $z=3\ \si{\metre}$ is shown in Figure \ref{fig:okc_icell}. This plot indicates the ability of QES-Winds to read in and process ESRI shapefiles. The cell type value $0$ (blue) represents the building cells while value $1$ (red) indicates the air cells.
+A new shapefile reader function has been added to QES-Winds, which provides the capacity to load the ESRI shapefiles using GDAL (Geospatial Data Abstraction Library) libraries. After the building footprints and heights are loaded from ESRI shapefiles, QES-Winds creates polygon buildings and applies appropriate parameterization to them. Figure \ref{fig:okc_qgis} shows an example ESRI shapefile can be read into QES-Winds, Central Business District (CBD) of Oklahoma City shapefile, subject to JU2003 experimental campaign \cite{allwine2006joint}, plotted using the freely available software QGIS (\href{https://qgis.org}{https://qgis.orgg}). The cell type contour for the Oklahoma City test case in a horizontal plane at $z=3$ m is shown in Figure \ref{fig:okc_icell}. This plot indicates the ability of QES-Winds to read in and process ESRI shapefiles. The cell type value $0$ (blue) represents the building cells while value $1$ (red) indicates the air cells.
 
 \begin{figure}[H]
 \centering
@@ -141,7 +141,7 @@ A new shapefile reader function has been added to QES-Winds, which provides the 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth,keepaspectratio]{Images/oklahoma_z_3_icell.png}
-\caption{Cell type contour for the Oklahoma City test case in a horizontal plane at $z=3\ \si{\metre}$. The cell type value $0$ (blue) represents the building cells while value $1$ (red) indicates the air cells.}
+\caption{Cell type contour for the Oklahoma City test case in a horizontal plane at $z=3$ m. The cell type value $0$ (blue) represents the building cells while value $1$ (red) indicates the air cells.}
 \end{figure}
 
 The user can define the address to the shapefile using <SHP> variable as well as the name of the shapefile using the <SHPBuildingLayer> and the correlation factor between the height field of the shapefile and the actual height of the buildings using the <heightFactor> under <simulationParameters> part in the XML file:
@@ -157,7 +157,7 @@ The user can define the address to the shapefile using <SHP> variable as well as
 \subsection{Import Building From XML}
 \label{sec:building}
 
-Instead of reading in a ESRI shapefile, the user can import building information manually through the XML file. This can be done by using the <buildings> section of the XML file. The only option available for now is the rectangular building. Information required for defining a rectangular building are height, base height, length, width, location of the closest corner to the origin of domain and building rotational angle. Following is an example of a rectangular building with $40\ \si{\metre}$ as height, $0\si{\metre}$ as base height, $20\ \si{\metre}$ as length and width, closest corner to the origin located at $90\ \si{\metre}$ in $x$ and $y$ directions, and $0\ \si{\degree}$ as rotation angle with respect to the North-South line. Also, $0.1\ \si{\metre}$ is defined as the surface roughness for all the building walls.
+Instead of reading in a ESRI shapefile, the user can import building information manually through the XML file. This can be done by using the <buildings> section of the XML file. The only option available for now is the rectangular building. Information required for defining a rectangular building are height, base height, length, width, location of the closest corner to the origin of domain and building rotational angle. Following is an example of a rectangular building with $40$ m as height, $0\sim as base height, $20$ m as length and width, closest corner to the origin located at $90$ m in $x$ and $y$ directions, and $0$ {\degree}$ as rotation angle with respect to the North-South line. Also, $0.1$ m is defined as the surface roughness for all the building walls.
 
 \begin{lstlisting}[language=XML]
 <buildings>
@@ -308,7 +308,7 @@ Figure \ref{fig:log_profile} shows velocity magnitude contour with overlaying ve
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth,keepaspectratio]{Images/log_y_101.png}
-\caption{Velocity magnitude contour with overlaying velocity vectors in a vertical plane at $y=101\ \si{\meter}$ for initial velocity field created by the logarithmic profile.}
+\caption{Velocity magnitude contour with overlaying velocity vectors in a vertical plane at $y=101$ m for initial velocity field created by the logarithmic profile.}
 \end{figure}
 \noindent
 
@@ -333,7 +333,7 @@ Figure \ref{fig:exp} shows velocity magnitude contour with overlaying  velocity 
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth,keepaspectratio]{Images/exp_y_101.png}
-\caption{Velocity magnitude contour with overlaying velocity vectors in a vertical plane at $y=101\ \si{\meter}$ for initial velocity field created by the exponential (power law) profile.}
+\caption{Velocity magnitude contour with overlaying velocity vectors in a vertical plane at $y=101$ m for initial velocity field created by the exponential (power law) profile.}
 \end{figure}
 \noindent
 
@@ -361,7 +361,7 @@ Figure \ref{fig:canopy} shows velocity magnitude contour with overlaying  veloci
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth,keepaspectratio]{Images/canopy_y_101.png}
-\caption{Velocity magnitude contour with overlaying velocity vectors in a vertical plane at $y=101\ \si{\meter}$ for initial velocity field created by the urban canopy profile.}
+\caption{Velocity magnitude contour with overlaying velocity vectors in a vertical plane at $y=101$ m for initial velocity field created by the urban canopy profile.}
 \end{figure}
 \noindent
 
@@ -416,7 +416,7 @@ Upwind cavity as described in \cite{nelson20085,bagal2004improved, gowardhan2010
 
 where $L$, $H$ and $W$ are length, width and height of the building, receptively.
 
-Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} show cell type contour to represent the area of effect of the R\"{o}ckle upwind cavity parameterization in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively. The upwind parameterizations is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively.
+Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} show cell type contour to represent the area of effect of the R\"{o}ckle upwind cavity parameterization in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively. The upwind parameterizations is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively.
 
 \begin{figure}[H]
     \centering
@@ -435,7 +435,7 @@ Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} s
     \includegraphics[width=11.0cm,keepaspectratio]{Images/upwind_y_100_1_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the R\"{o}ckle upwind cavity parameterization in a vertical plane at $y=100\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the R\"{o}ckle upwind cavity parameterization in a vertical plane at $y=100$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100$ m.}
 \end{figure}
 
 \begin{figure}[H]
@@ -455,7 +455,7 @@ Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} s
     \includegraphics[width=11.0cm,keepaspectratio]{Images/upwind_z_5_1_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the R\"{o}ckle upwind cavity parameterization in a horizontal plane at $z=5\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the R\"{o}ckle upwind cavity parameterization in a horizontal plane at $z=5$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5$ m.}
 \end{figure}
 
 The second option is called the Modified
@@ -468,7 +468,7 @@ Vortex Parameterization (MVP) and created by Bagal et al. \cite{bagal2004improve
 
 where $L$, $H$ and $W$ are length, width and height of the building, receptively.
 
-Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} show cell type contour to represent the area of effect of the MVP upwind cavity parameterization in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively. The upwind parameterizations is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively.
+Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} show cell type contour to represent the area of effect of the MVP upwind cavity parameterization in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively. The upwind parameterizations is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively.
 
 \begin{figure}[H]
     \centering
@@ -487,7 +487,7 @@ Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} s
     \includegraphics[width=11.0cm,keepaspectratio]{Images/upwind_y_100_2_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the MVP upwind cavity parameterization in a vertical plane at $y=100\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the MVP upwind cavity parameterization in a vertical plane at $y=100$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100$ m.}
 \end{figure}
 
 \begin{figure}[H]
@@ -507,12 +507,12 @@ Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} s
     \includegraphics[width=11.0cm,keepaspectratio]{Images/upwind_z_5_2_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the MVP upwind cavity parameterization in a horizontal plane at $z=5\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the MVP upwind cavity parameterization in a horizontal plane at $z=5$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5$ m.}
 \end{figure}
 
 The third option is called the high-rise MVP algorithm (HMVP) and is designed to address the shortcomings of the previous models when it comes to tall buildings  \cite{nelson20085}. The length of the displacement zone is calculated the same as Eq. \ref{eq:lf_MVP}. The HMVP algorithm creates two ellipsoids with the difference that the inner region only extends to $60\%$ of the minimum of building height and building width. In addition, the algorithm linearly reduces the velocities in the outer region from their upwind values at the outer surface to $40\%$ of the initial values on the inner region.
 
-Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} show cell type contour to represent the area of effect of the HMVP upwind cavity parameterization in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively. The upwind parameterization is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively.
+Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} show cell type contour to represent the area of effect of the HMVP upwind cavity parameterization in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively. The upwind parameterization is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively.
 
 \begin{figure}[H]
     \centering
@@ -531,7 +531,7 @@ Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} s
     \includegraphics[width=11.0cm,keepaspectratio]{Images/upwind_y_100_3_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect for the HMVP upwind cavity parameterization in a vertical plane at $y=100\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect for the HMVP upwind cavity parameterization in a vertical plane at $y=100$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100$ m.}
 \end{figure}
 
 \begin{figure}[H]
@@ -551,7 +551,7 @@ Part (a) of Figure \ref{fig:upwind_1_vert} and Figure \ref{fig:upwind_1_horiz} s
     \includegraphics[width=11.0cm,keepaspectratio]{Images/upwind_z_5_3_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the HMVP upwind cavity parameterization in a horizontal plane at $z=5\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the HMVP upwind cavity parameterization in a horizontal plane at $z=5$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5$ m.}
 \end{figure}
 
 In order to choose between these three upwind models, the user needs to change the value of "upwindCavityFlag" in the XML file.
@@ -590,7 +590,7 @@ d=L_{R} \sqrt{\left(1-\left(\frac{z}{H}\right)^{2}\right)\left(1-\left(\frac{y}{
 
 where $L$, $H$ and $W$ are length, width and height of the building, receptively. $u(x,y,z)$ is the velocity at point $(x,y,z)$, $U(H)$ is the reference velocity at height of the building and $x$ is the distance from the building in the stream-wise direction.
 
-Part (a) of Figure \ref{fig:wake_vert} and Figure \ref{fig:wake_horiz} show cell type contour to represent the area of effect of the R\"{o}ckle wake parameterization in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively. The wake parameterization is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:wake_vert} and Figure \ref{fig:wake_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively.
+Part (a) of Figure \ref{fig:wake_vert} and Figure \ref{fig:wake_horiz} show cell type contour to represent the area of effect of the R\"{o}ckle wake parameterization in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively. The wake parameterization is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:wake_vert} and Figure \ref{fig:wake_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively.
 
 \begin{figure}[H]
     \centering
@@ -609,7 +609,7 @@ Part (a) of Figure \ref{fig:wake_vert} and Figure \ref{fig:wake_horiz} show cell
     \includegraphics[width=11.0cm,keepaspectratio]{Images/wake_y_100_1_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the R\"{o}ckle wake parameterization in a vertical plane at $y=100\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the R\"{o}ckle wake parameterization in a vertical plane at $y=100$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100$ m.}
 \end{figure}
 
 \begin{figure}[H]
@@ -629,7 +629,7 @@ Part (a) of Figure \ref{fig:wake_vert} and Figure \ref{fig:wake_horiz} show cell
     \includegraphics[width=11.0cm,keepaspectratio]{Images/wake_z_5_1_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the R\"{o}ckle wake parameterization in a horizontal plane at $z=5\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the R\"{o}ckle wake parameterization in a horizontal plane at $z=5$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5$ m.}
 \end{figure}
 
 In order to turn on the wake model, the user needs to change the value of "wakeFlag" in the XML file.
@@ -658,7 +658,7 @@ where $S$ is the spacing between two buildings and $x_{can}$ is the distance fro
 
 In order to identify the criteria to determine the existence of a street canyon, Singh et al. \cite{singh2008evaluation} utilized the cavity length, $L_R$ (Eq. \ref{eq:Lr}), for the upwind building. If $S \textless L_R$, the street canyon parameterization is applied, otherwise, the upwind building is considered as an isolated building.
 
-Part (a) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} show cell type contour to represent the area of effect of the street canyon parameterization in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively. The street canyon parameterization is applied to an area between two rectangular buildings. The upwind building is same as the one defined in Section \ref{sec:building}. The downwind building is a rectangular building with $20\ \si{\metre}$ as height, $0\ \si{\metre}$ as base height, $20\ \si{\metre}$ as length and width, closest corner to the origin located at $90\ \si{\metre}$ in $x$ and $120\ \si{\metre}$ in $y$ directions, and $0\si{\degree}$ as rotation angle with respect to the North-South line. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100\ \si{\meter}$ and a horizontal plane at $z=5\ \si{\meter}$, respectively.
+Part (a) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} show cell type contour to represent the area of effect of the street canyon parameterization in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively. The street canyon parameterization is applied to an area between two rectangular buildings. The upwind building is same as the one defined in Section \ref{sec:building}. The downwind building is a rectangular building with $20$ m as height, $0$ m as base height, $20$ m as length and width, closest corner to the origin located at $90$ m in $x$ and $120$ m in $y$ directions, and $0\si{\degree}$ as rotation angle with respect to the North-South line. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m and a horizontal plane at $z=5$ m, respectively.
 
 \begin{figure}[H]
     \centering
@@ -677,7 +677,7 @@ Part (a) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} show 
     \includegraphics[width=11.0cm,keepaspectratio]{Images/street_y_100_1_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the street canyon parameterization in a vertical plane at $y=100\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the street canyon parameterization in a vertical plane at $y=100$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100$ m.}
 \end{figure}
 
 \begin{figure}[H]
@@ -697,7 +697,7 @@ Part (a) of Figure \ref{fig:street_vert} and Figure \ref{fig:street_horiz} show 
     \includegraphics[width=11.0cm,keepaspectratio]{Images/street_z_5_1_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the street canyon parameterization in a horizontal plane at $z=5\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the street canyon parameterization in a horizontal plane at $z=5$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5$ m.}
 \end{figure}
 
 To turn on the street canyon parameterization, the user needs to change the value of "streetCanyonFlag" in the XML file.
@@ -729,7 +729,7 @@ H_{\mathrm{c}}=0.22 R
 where $B_s$ is the smaller of the height ($H$) and the effective width ($W_{eff}$) of the
 building, $B_l$ is the larger of $H$ and $W_{eff}$ , $R$ is the vortex size scaling factor.
 
-Part (a) of Figure \ref{fig:street_vert} show cell type contour to represent the area of effect of the rooftop parameterization in a vertical plane at $y=100\ \si{\meter}$. The rooftop parameterization is applied to a rectangular building with $40\ \si{\metre}$ as height, $0\ \si{\metre}$ as base height, $40\ \si{\metre}$ as length and width, closest corner to the origin located at $90\ \si{\metre}$ in $x$ and $y$ directions, and $0\si{\degree}$ as rotation angle with respect to the North-South line. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:street_vert} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100\ \si{\meter}$.
+Part (a) of Figure \ref{fig:street_vert} show cell type contour to represent the area of effect of the rooftop parameterization in a vertical plane at $y=100$ m. The rooftop parameterization is applied to a rectangular building with $40$ m as height, $0$ m as base height, $40$ m as length and width, closest corner to the origin located at $90$ m in $x$ and $y$ directions, and $0\si{\degree}$ as rotation angle with respect to the North-South line. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:street_vert} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a vertical plane at $y=100$ m.
 
 \begin{figure}[H]
     \centering
@@ -748,7 +748,7 @@ Part (a) of Figure \ref{fig:street_vert} show cell type contour to represent the
     \includegraphics[width=11.0cm,keepaspectratio]{Images/rooftop_y_100_1_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the rooftop parameterization in a vertical plane at $y=100\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the rooftop parameterization in a vertical plane at $y=100$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a vertical plane at $y=100$ m.}
 \end{figure}
 
 To turn the parameterization on, the user needs to change the value of "rooftopFlag" in the XML file.
@@ -780,7 +780,7 @@ where $B_s$ is the smaller of the height ($H$) and the effective width ($W_{eff}
 building, $B_l$ is the larger of $H$ and $W_{eff}$ , $R$ is the vortex size scaling factor, $L_c$ is the downwind length of the half-ellipse that defines the vortex recirculation region, and
 $W_c$ is the lateral width of the elliptical recirculation region. Within the recirculation zone, the velocity is reversed and scaled linearly from the reference wind speed near the wall to zero at the edge of the ellipse.
 
-Part (a) of Figure \ref{fig:street_vert} show cell type contour to represent the area of effect of the sidewall parameterization in a horizontal plane at $z=5\ \si{\meter}$. The rooftop parameterization is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:sidewall_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a horizontal plane at $z=5\ \si{\meter}$.
+Part (a) of Figure \ref{fig:street_vert} show cell type contour to represent the area of effect of the sidewall parameterization in a horizontal plane at $z=5$ m. The rooftop parameterization is applied to a rectangular building defined in Section \ref{sec:building}. The initial guess field is constructed using a single sensor with logarithmic profile as defined in \ref{sec:sensor_xml}. Parts (b) and (c) of Figure \ref{fig:sidewall_horiz} indicate velocity magnitude contour with overlaying velocity vectors of initial (part (b)) and final (part(c)) velocity fields in a horizontal plane at $z=5$ m.
 
 \begin{figure}[H]
     \centering
@@ -799,7 +799,7 @@ Part (a) of Figure \ref{fig:street_vert} show cell type contour to represent the
     \includegraphics[width=11.0cm,keepaspectratio]{Images/sidewall_z_5_1_final.png}
     \caption{}
     \end{subfigure}
-    \caption{(a) Cell type contour to show the area of effect of the sidewall parameterization in a horizontal plane at $z=5\ \si{\meter}$. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5\ \si{\meter}$.}
+    \caption{(a) Cell type contour to show the area of effect of the sidewall parameterization in a horizontal plane at $z=5$ m. Velocity magnitude contour with overlaying velocity vectors of (b) initial velocity field and (c) final velocity field, in a horizontal plane at $z=5$ m.}
 \end{figure}
 
 In order to turn the algorithm on, the user needs to change the value of "sidewallFlag" in the XML file.
