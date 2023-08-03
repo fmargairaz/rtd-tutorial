@@ -14,7 +14,8 @@ for Graphics Processing Unit (GPU) acceleration. The code uses NVIDIA's dynamic
 parallelism API to substantially accelerate simulations. **QES requires a
 NVIDIA GPU with Compute Capability of 7.0 (or higher)**.
 
-Fabien Margairaz .. image:: https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png
+Fabien Margairaz |test|
+.. |test| image:: https://info.orcid.org/wp-content/uploads/2019/11/orcid_16x16.png
    :target: https://orcid.org/0000-0003-0208-3455
 
 .. note::
