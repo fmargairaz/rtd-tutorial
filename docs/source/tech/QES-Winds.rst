@@ -259,11 +259,11 @@ is the rectangular building. Information required for defining a
 rectangular building are height, base height, length, width, location of
 the closest corner to the origin of domain and building rotational
 angle. Following is an example of a rectangular building with :math:`40`
-m as height,
-:math:`0\sim as base height,`\ 20\ :math:`m as length and width, closest corner to the origin located at`\ 90\ :math:`m in`\ x\ :math:`and`\ y\ :math:`directions, and`\ 0\ :math:`{\degree}`
-as rotation angle with respect to the North-South line. Also,
-:math:`0.1` m is defined as the surface roughness for all the building
-walls.
+m as height, :math:`0` m as base height, :math:`20` m as length and
+width, closest corner to the origin located at :math:`90` m in :math:`x`
+and :math:`y` directions, and :math:`0^{\circ}` as rotation angle with
+respect to the North-South line. Also, :math:`0.1` m is defined as the
+surface roughness for all the building walls.
 
 .. code:: xml
 
@@ -864,10 +864,10 @@ the one defined in Section `4.3 <#sec:building>`__. The downwind
 building is a rectangular building with :math:`20` m as height,
 :math:`0` m as base height, :math:`20` m as length and width, closest
 corner to the origin located at :math:`90` m in :math:`x` and
-:math:`120` m in :math:`y` directions, and :math:`0\si{\degree}` as
-rotation angle with respect to the North-South line. The initial guess
-field is constructed using a single sensor with logarithmic profile as
-defined in `5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
+:math:`120` m in :math:`y` directions, and :math:`0^{\circ}` as rotation
+angle with respect to the North-South line. The initial guess field is
+constructed using a single sensor with logarithmic profile as defined in
+`5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
 `[fig:street_vert] <#fig:street_vert>`__ and Figure
 `[fig:street_horiz] <#fig:street_horiz>`__ indicate velocity magnitude
 contour with overlaying velocity vectors of initial (part (b)) and final
@@ -912,7 +912,7 @@ The rooftop parameterization described in
 :raw-latex:`\cite{bagal2004implementation, pol2006implementation}`,
 captures the separation of the flow from the leading edge of the
 building. It first checks if the incident flow is in
-:math:`\pm15\degree` of perpendicular to the front face. The
+:math:`\pm15^{\circ}` of perpendicular to the front face. The
 parameterization then creates an ellipsoidal region above the building
 with height of :math:`H_c` (height of the vortex, calculated by Eq.
 `[eq:Hc] <#eq:Hc>`__) and length of :math:`L_c` (length of the vortex,
@@ -944,7 +944,7 @@ parameterization in a vertical plane at :math:`y=100` m. The rooftop
 parameterization is applied to a rectangular building with :math:`40` m
 as height, :math:`0` m as base height, :math:`40` m as length and width,
 closest corner to the origin located at :math:`90` m in :math:`x` and
-:math:`y` directions, and :math:`0\si{\degree}` as rotation angle with
+:math:`y` directions, and :math:`0^{\circ}` as rotation angle with
 respect to the North-South line. The initial guess field is constructed
 using a single sensor with logarithmic profile as defined in
 `5.1 <#sec:sensor_xml>`__. Parts (b) and (c) of Figure
@@ -978,9 +978,9 @@ Sidewall Recirculation Zone
 The sidewall parameterization is designed to represent the effects of
 the edge of the building on the upwind field
 :cite:`hayati2017comprehensive`. It first checks if a face has an
-outward normal vector nominally (:math:`\pm 10\degree`) perpendicular to
-the local wind vector. The important parameters controlling the sidewall
-vortex strength and geometry are:
+outward normal vector nominally (:math:`\pm 10^{\circ}`) perpendicular
+to the local wind vector. The important parameters controlling the
+sidewall vortex strength and geometry are:
 
 .. math:: R=B_{\mathrm{s}}^{2 / 3} B_{l}^{1 / 3}
 
