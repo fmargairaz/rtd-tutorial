@@ -29,10 +29,15 @@ framework designed to compute high-resolution wind and concentration fields in
 complex atmospheric-boundary-layer environments.
 
 The modules are the following:
+
 * **QES-Winds** is the new wind model computing divergence-free steady-state 3D wind field in complex domain.
+
 * **QES-TURB** is a stand-alone turbulence model that computes turbulence fields from the calculated wind field in QES-Winds.
+
 * **QES-Plume** is a stand-alone Lagrangian dispersion model with the ability to calculate spatially and temporally varying scalar concentrations.
+
 * **QES-Fire** is a fire-spread model.
+
 * **QES-Transport** is a transport model (to be implemented)
 
 .. note::
@@ -61,6 +66,9 @@ Acknowledgements
 ----------------
 
 This work was partly supported by grants from:
+
 * The National Institute of Environment Research (NIER), funded by the Ministry of Environment (MOE) of the Republic of Korea (NIER-SP2019-312). In addition, we would like to acknowledge Dr. Jae-Jin Kim from Department of Environmental Atmospheric Sciences, Pukyong National University, Republic of Korea, as the main Principal Investigator (PI) on the grant from the National Institute of Environment Research (NIER).
+
 * The United States Department of Agriculture National Institute for Food and Agriculture Specialty Crop Research Initiative Award No. 2018-03375.
+
 * The United States Department of Agriculture Agricultural Research Service through Research Support Agreement 58-2072-0-036.
