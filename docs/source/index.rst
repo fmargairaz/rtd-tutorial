@@ -63,6 +63,7 @@ The modules are the following:
 .. toctree::
    :maxdepth: 2
    :caption: References
+
    References
 
 
