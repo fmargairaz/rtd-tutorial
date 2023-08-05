@@ -59,6 +59,10 @@ The modules are the following:
    QES-Winds
    QES-Turb
    QES-Plume
+
+.. toctree::
+   :maxdepth: 2
+   :caption: References
    References
 
 
