@@ -63,6 +63,7 @@ The modules are the following:
    :maxdepth: 2
    :caption: References
 
+   Publications
    References
 
 
