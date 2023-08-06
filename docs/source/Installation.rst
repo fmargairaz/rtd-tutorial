@@ -71,3 +71,7 @@ those packages.
 
 -  A successful build will result in creating the executable named
    ”qesWinds”
+
+::
+
+   cmake -DENABLE_SANITY_TESTS=ON -DENABLE_GPU_TESTS=ON ..
