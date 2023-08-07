@@ -29,13 +29,19 @@ There is a chance that cmake fails to find all the packages needed for running t
     \item A successful build will result in creating the executable named ''qesWinds''
 \end{itemize}
 
+On a general Linux system, such as Ubuntu 18.04 or 20.04, the following packages need to be installed:
+\begin{itemize}
+\item libgdal-dev
+\item libnetcdf-c++4-dev
+\item libnetcdf-cxx-legacy-dev
+\item libnetcdf-dev
+\item netcdf-bin
+\item libboost-all-dev
+\item cmake
+\item cmake-curses-gui
+\end{itemize}
 
-
+If the system uses \verb|apt|, the packages can be installed using the following command:
 \begin{verbatim}
-cmake -DENABLE_SANITY_TESTS=ON -DENABLE_GPU_TESTS=ON ..
-\end{verbatim}
-
-Unit tests can be enable by settong the flag \verb|ENABLE_UNITTESTS| to \verb|ON|.
-\begin{verbatim}
-cmake -DENABLE_UNITTESTS=ON ..
+apt install libgdal-dev libnetcdf-c++4-dev  libnetcdf-cxx-legacy-dev libnetcdf-dev netcdf-bin libboost-all-dev cmake cmake-curses-gui
 \end{verbatim}

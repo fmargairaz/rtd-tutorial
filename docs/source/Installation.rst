@@ -72,13 +72,28 @@ those packages.
 -  A successful build will result in creating the executable named
    ”qesWinds”
 
+On a general Linux system, such as Ubuntu 18.04 or 20.04, the following
+packages need to be installed:
+
+-  libgdal-dev
+
+-  libnetcdf-c++4-dev
+
+-  libnetcdf-cxx-legacy-dev
+
+-  libnetcdf-dev
+
+-  netcdf-bin
+
+-  libboost-all-dev
+
+-  cmake
+
+-  cmake-curses-gui
+
+If the system uses ``apt``, the packages can be installed using the
+following command:
+
 ::
 
-   cmake -DENABLE_SANITY_TESTS=ON -DENABLE_GPU_TESTS=ON ..
-
-Unit tests can be enable by settong the flag ``ENABLE_UNITTESTS`` to
-``ON``.
-
-::
-
-   cmake -DENABLE_UNITTESTS=ON ..
+   apt install libgdal-dev libnetcdf-c++4-dev  libnetcdf-cxx-legacy-dev libnetcdf-dev netcdf-bin libboost-all-dev cmake cmake-curses-gui
