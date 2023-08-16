@@ -23,8 +23,8 @@ Here are a few rules to follow when writing latex sources:
 * add new reference in refs.bib
 * no references (figures, equations, or sections)
 * no floating element (figure will be placed exactly where they are in the text)
-* for inline code use: `\verb|apt|`; for code block use: `\begin{verbatim} .. \end{verbatim}`
-* no spaces in `\cite{}` (use `\cite{}` only)
+* for inline code use: `\verb|..|`; for code block use: `\begin{verbatim} .. \end{verbatim}`
+* no spaces in `\cite{..}` (use `\cite{..}` only)
 * if the structure of the document is changed (files), the changes need to be made to index.rst
 
 Run pandoc to convert latex to rst :
